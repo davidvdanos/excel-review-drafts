@@ -1,0 +1,653 @@
+<!doctype html>
+<html lang="el">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Το Excel σας δουλεύει. Μέχρι να λείψει ο Γιώργος. | WebCoreX</title>
+<meta name="description" content="Στείλτε το Excel που τρέχει τη δουλειά σας. Σε 3 εργάσιμες παίρνετε δωρεάν review από πραγματικό developer: βίντεο 5 λεπτών, 3 ευρήματα, σκίτσο dashboard και εύρος κόστους. Χωρίς AI.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Commissioner:wght@500;700;800;900&family=Manrope:wght@400;500;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#FBF8EE;
+  --card:#FFFFFF;
+  --ink:#14201A;
+  --muted:#46544C;
+  --green:#1B7444;
+  --green-dark:#0E4A2B;
+  --green-soft:#DFF0E5;
+  --yellow:#FFD83D;
+  --yellow-soft:#FFF1A8;
+  --red:#B3261E;
+  --red-soft:#FBD9D5;
+  --line:#CFD8CF;
+  --radius:14px;
+  --shadow:0 2px 0 rgba(20,32,26,.9);
+  --head:'Commissioner','Manrope',system-ui,sans-serif;
+  --body:'Manrope','Commissioner',system-ui,sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  margin:0;color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.55;font-weight:500;
+  background-color:var(--paper);
+  background-image:
+    linear-gradient(rgba(27,116,68,.09) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(27,116,68,.09) 1px,transparent 1px);
+  background-size:28px 28px;
+  overflow-wrap:break-word;
+}
+img,svg{max-width:100%;height:auto}
+h1,h2,h3{font-family:var(--head);color:var(--ink);line-height:1.12;margin:0 0 .5em;letter-spacing:-.01em}
+h1{font-weight:900;font-size:clamp(2rem,6.4vw,3.7rem)}
+h2{font-weight:800;font-size:clamp(1.55rem,4.4vw,2.35rem)}
+h3{font-weight:800;font-size:1.15rem}
+p{margin:0 0 1em}
+a{color:var(--green-dark);text-underline-offset:3px}
+a:hover{color:var(--green)}
+:focus-visible{outline:3px solid var(--ink);outline-offset:3px;border-radius:4px}
+.wrap{width:100%;max-width:1120px;margin:0 auto;padding:0 16px}
+section{padding:56px 0}
+.kicker{display:inline-block;font-family:var(--head);font-weight:800;font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;background:var(--ink);color:#fff;padding:4px 10px;border-radius:4px;margin-bottom:14px}
+.lead{font-size:1.1rem;color:var(--muted);max-width:60ch}
+.mark{background:var(--yellow);padding:0 .15em;border-radius:4px;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+
+/* top bar */
+.bar{border-bottom:2px solid var(--ink);background:var(--card)}
+.bar .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-top:10px;padding-bottom:10px}
+.logo{font-family:var(--head);font-weight:900;font-size:1.2rem;color:var(--ink);text-decoration:none}
+.logo b{color:var(--green)}
+.bar a.tel{font-weight:800;font-size:.95rem;color:var(--ink);text-decoration:none;border:2px solid var(--ink);border-radius:999px;padding:6px 14px;white-space:nowrap}
+.bar a.tel:hover{background:var(--yellow)}
+
+/* hero */
+.hero{padding:34px 0 48px}
+.hero-grid{display:grid;gap:28px;grid-template-columns:1fr;align-items:start}
+.sub{font-size:1.2rem;font-weight:700;margin-bottom:.6em;max-width:34ch}
+.nobot{font-family:var(--head);font-weight:800;font-size:1.05rem;border-left:6px solid var(--green);padding:2px 0 2px 12px;margin:0 0 1.2em}
+.me{display:flex;align-items:center;gap:12px;background:var(--yellow-soft);border:2px solid var(--ink);border-radius:var(--radius);padding:10px 14px;max-width:460px;transform:rotate(-1deg);box-shadow:var(--shadow)}
+.me p{margin:0;font-size:.95rem;line-height:1.4}
+.avatar{flex:none;width:52px;height:52px;border-radius:50%;background:var(--green);border:2px solid var(--ink);display:grid;place-items:center;overflow:hidden}
+.avatar svg{width:100%;height:100%;display:block}
+
+/* form card */
+.formcard{background:var(--card);border:2px solid var(--ink);border-radius:var(--radius);padding:20px;box-shadow:6px 6px 0 var(--ink);position:relative}
+.formcard .tape{position:absolute;top:-12px;left:50%;width:90px;height:24px;background:var(--yellow);border:2px solid var(--ink);transform:translateX(-50%) rotate(-2deg)}
+.formcard h2{font-size:1.3rem;margin:.3em 0 .2em}
+.formcard .small{font-size:.9rem;color:var(--muted);margin-bottom:.9em}
+.f{display:grid;gap:10px}
+.f label.l{display:block;font-weight:800;font-size:.9rem;margin-bottom:3px}
+.f label .opt{font-weight:500;color:var(--muted)}
+.f input[type=text],.f input[type=email],.f input[type=tel]{width:100%;font:inherit;font-size:1rem;padding:10px 12px;border:2px solid var(--ink);border-radius:8px;background:#fff;color:var(--ink)}
+.row2{display:grid;gap:10px;grid-template-columns:1fr}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%);white-space:nowrap}
+.drop{display:block;border:2px dashed var(--green);background:var(--green-soft);border-radius:10px;padding:12px;text-align:center;cursor:pointer;transition:background .15s}
+.drop:hover,.drop.over{background:#C9E6D3}
+.drop:focus-within{outline:3px solid var(--ink);outline-offset:3px}
+.drop strong{display:block;font-family:var(--head);font-weight:800}
+.drop span{font-size:.85rem;color:var(--muted)}
+.drop .fname{display:block;margin-top:4px;font-weight:800;color:var(--green-dark);font-size:.9rem;word-break:break-all}
+.chk{display:flex;gap:10px;align-items:flex-start;font-size:.9rem}
+.chk input{width:20px;height:20px;margin-top:2px;accent-color:var(--green);flex:none}
+.btn{font-family:var(--head);font-weight:800;font-size:1.05rem;background:var(--green);color:#fff;border:2px solid var(--ink);border-radius:10px;padding:13px 18px;cursor:pointer;box-shadow:var(--shadow);transition:transform .12s,background .12s;text-align:center;text-decoration:none;display:inline-block}
+.btn:hover{background:var(--green-dark);color:#fff;transform:translateY(-1px)}
+.btn:active{transform:translateY(1px);box-shadow:none}
+.btn.yellow{background:var(--yellow);color:var(--ink)}
+.btn.yellow:hover{background:#FFE46B;color:var(--ink)}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.thanks{background:var(--green-soft);border:2px solid var(--green);border-radius:10px;padding:16px;font-weight:800;font-family:var(--head)}
+.thanks p{margin:.3em 0 0;font-family:var(--body);font-weight:500}
+.call{margin-top:14px;padding-top:12px;border-top:2px dotted var(--line);font-size:.95rem}
+.call b{font-family:var(--head);display:block;margin-bottom:6px}
+.pills{display:flex;flex-wrap:wrap;gap:8px}
+.pills a{font-weight:800;font-size:.9rem;text-decoration:none;color:var(--ink);border:2px solid var(--ink);border-radius:999px;padding:5px 12px;background:#fff}
+.pills a:hover{background:var(--yellow);color:var(--ink)}
+
+/* story */
+.story{background:var(--ink);color:#fff;padding:56px 0;border-block:3px solid var(--ink)}
+.story h2{color:#fff}
+.story .lead{color:#D9E2DC}
+.panels{display:grid;gap:22px;grid-template-columns:1fr;margin-top:26px}
+.panel{background:#fff;color:var(--ink);border:2px solid var(--ink);border-radius:var(--radius);padding:14px;position:relative;box-shadow:5px 5px 0 var(--yellow)}
+.panel:nth-child(1){transform:rotate(-1.2deg)}
+.panel:nth-child(2){transform:rotate(1deg)}
+.panel:nth-child(3){transform:rotate(-.8deg)}
+.panel:nth-child(4){transform:rotate(1.2deg);background:var(--green-soft)}
+.panel .n{position:absolute;top:-14px;left:12px;background:var(--yellow);color:var(--ink);font-family:var(--head);font-weight:900;border:2px solid var(--ink);border-radius:999px;width:30px;height:30px;display:grid;place-items:center}
+.panel svg{display:block;width:100%;height:auto;border-radius:8px;background:var(--paper);border:1px solid var(--line)}
+.panel p{margin:10px 0 0;font-weight:800;font-family:var(--head);line-height:1.3}
+.panel p span{display:block;font-family:var(--body);font-weight:500;font-size:.88rem;color:var(--muted);margin-top:3px}
+.story .warm{margin-top:28px;max-width:62ch;color:#E8EEEA}
+
+/* before / after */
+.ba{display:grid;gap:18px;grid-template-columns:1fr;margin-top:22px;align-items:stretch}
+.ba .side{background:#fff;border:2px solid var(--ink);border-radius:var(--radius);padding:14px;position:relative}
+.ba .side.after{background:var(--green-soft)}
+.ba .tag{font-family:var(--head);font-weight:800;font-size:.8rem;text-transform:uppercase;letter-spacing:.06em;margin-bottom:8px;display:block}
+.xl{width:100%;border-collapse:collapse;font-size:.78rem;table-layout:fixed}
+.xl th,.xl td{border:1px solid #9AA79F;padding:3px 5px;text-align:left;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;font-weight:500}
+.xl th{background:#E6EAE7;font-weight:700;text-align:center}
+.xl .y{background:#FFE98A}.xl .r{background:var(--red-soft);color:var(--red);font-weight:800}.xl .g{background:#BFE3CB}.xl .o{background:#FFD0A8}
+.note{position:absolute;right:10px;bottom:-16px;background:var(--yellow);border:2px solid var(--ink);padding:6px 10px;font-size:.82rem;font-weight:800;transform:rotate(3deg);max-width:210px;box-shadow:3px 3px 0 rgba(20,32,26,.25)}
+.dash{display:grid;gap:10px}
+.kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.kpi{background:#fff;border:2px solid var(--ink);border-radius:8px;padding:6px 8px}
+.kpi small{display:block;font-size:.7rem;color:var(--muted);font-weight:700}
+.kpi b{font-family:var(--head);font-size:1.2rem}
+.kpi.warn{background:var(--yellow)}
+.bars{background:#fff;border:2px solid var(--ink);border-radius:8px;padding:8px}
+.after-note{margin-top:10px;font-weight:700;font-size:.95rem}
+
+/* cards */
+.grid4{display:grid;gap:20px;grid-template-columns:1fr;margin-top:24px}
+.sticky{background:var(--yellow);border:2px solid var(--ink);padding:18px 18px 20px;box-shadow:4px 4px 0 var(--ink);border-radius:4px 4px 14px 4px}
+.sticky:nth-child(odd){transform:rotate(-1deg)}
+.sticky:nth-child(even){transform:rotate(1deg)}
+.sticky:nth-child(3n){background:var(--yellow-soft)}
+.sticky .num{font-family:var(--head);font-weight:900;font-size:2rem;line-height:1;display:block;margin-bottom:6px}
+.sticky p{margin:0}
+.ways{display:grid;gap:18px;grid-template-columns:1fr;margin-top:24px}
+.way{background:#fff;border:2px solid var(--ink);border-radius:var(--radius);padding:18px}
+.way h3 .ic{display:inline-grid;place-items:center;width:30px;height:30px;border-radius:50%;background:var(--green);color:#fff;font-size:.95rem;margin-right:8px;vertical-align:middle}
+
+/* calculator */
+.calc{background:var(--yellow-soft);border:2px solid var(--ink);border-radius:var(--radius);padding:22px;box-shadow:6px 6px 0 var(--ink)}
+.calc-grid{display:grid;gap:22px;grid-template-columns:1fr}
+.calc .field{margin-bottom:14px}
+.calc label{display:block;font-weight:800;margin-bottom:5px}
+.calc input{width:100%;max-width:200px;font:inherit;font-size:1.2rem;font-weight:800;padding:10px 12px;border:2px solid var(--ink);border-radius:8px;background:#fff;color:var(--ink)}
+.calc .hint{font-size:.85rem;color:var(--muted);margin-top:4px}
+.result{background:#fff;border:2px solid var(--ink);border-radius:var(--radius);padding:18px}
+.result .big{font-family:var(--head);font-weight:900;font-size:clamp(2rem,8vw,3rem);line-height:1.05;color:var(--green-dark)}
+.result .hrs{font-weight:800;font-size:1.1rem;margin:.3em 0 .6em}
+.result .fine{font-size:.85rem;color:var(--muted);margin-bottom:1em}
+
+/* about */
+.about{display:grid;gap:26px;grid-template-columns:1fr;align-items:center}
+.photo{width:170px;height:170px;border-radius:50%;border:3px solid var(--ink);background:var(--green);overflow:hidden;box-shadow:6px 6px 0 var(--yellow)}
+.photo svg{width:100%;height:100%;display:block}
+.photo-cap{font-size:.8rem;color:var(--muted);margin-top:8px}
+.about ul{padding-left:1.2em;margin:0 0 1em}
+.projects{display:grid;gap:12px;grid-template-columns:1fr;margin-top:12px}
+.proj{background:#fff;border:2px dashed var(--ink);border-radius:10px;padding:12px 14px;font-size:.95rem}
+.proj b{font-family:var(--head)}
+
+/* promise */
+.promise{background:var(--green-dark);color:#fff;border-radius:var(--radius);padding:28px 22px;border:3px solid var(--ink);box-shadow:6px 6px 0 var(--yellow)}
+.promise h2{color:#fff}
+.promise ul{list-style:none;padding:0;margin:0 0 1em;display:grid;gap:10px}
+.promise li{display:flex;gap:10px;align-items:flex-start;font-weight:700}
+.promise li svg{flex:none;margin-top:3px}
+.promise .phone-line{background:var(--yellow);color:var(--ink);padding:12px 14px;border-radius:8px;font-weight:800;font-family:var(--head);border:2px solid var(--ink);transform:rotate(-.6deg)}
+.proof{margin-top:18px;font-size:.98rem;color:#E4EEE8}
+
+/* faq */
+details{background:#fff;border:2px solid var(--ink);border-radius:10px;margin-bottom:12px}
+summary{cursor:pointer;font-family:var(--head);font-weight:800;padding:14px 16px;list-style:none;display:flex;justify-content:space-between;gap:12px;align-items:center}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font-size:1.5rem;line-height:1;flex:none;color:var(--green-dark)}
+details[open] summary::after{content:"\2212"}
+details[open] summary{border-bottom:2px dotted var(--line)}
+details p{padding:12px 16px 0;margin:0}
+details p:last-child{padding-bottom:14px}
+
+/* final */
+.final{display:grid;gap:26px;grid-template-columns:1fr;align-items:start}
+.final .big-call{display:grid;gap:10px;margin-top:16px}
+.final .big-call a.btn{width:100%}
+footer{background:var(--ink);color:#D9E2DC;padding:28px 0;font-size:.92rem}
+footer a{color:#fff}
+footer .wrap{display:flex;flex-wrap:wrap;gap:10px 24px;justify-content:space-between}
+
+@media (min-width:640px){
+  .row2{grid-template-columns:1fr 1fr}
+  .panels{grid-template-columns:1fr 1fr}
+  .grid4{grid-template-columns:1fr 1fr}
+  .ways{grid-template-columns:repeat(3,1fr)}
+  .projects{grid-template-columns:1fr 1fr}
+}
+@media (min-width:900px){
+  .wrap{padding:0 24px}
+  .hero{padding:28px 0 56px}
+  .hero-grid{grid-template-columns:1.05fr .95fr;gap:44px}
+  .panels{grid-template-columns:repeat(4,1fr)}
+  .ba{grid-template-columns:1fr 1fr;gap:36px}
+  .calc-grid{grid-template-columns:1fr 1fr;gap:34px}
+  .about{grid-template-columns:230px 1fr;gap:40px}
+  .final{grid-template-columns:1fr 1fr;gap:44px}
+  .formcard{padding:18px 20px}
+  section{padding:72px 0}
+}
+@media (min-width:900px) and (max-height:800px){
+  .f{gap:8px}
+  .formcard .small{margin-bottom:.6em}
+}
+@media (prefers-reduced-motion:reduce){
+  *{transition:none!important;animation:none!important;scroll-behavior:auto!important}
+}
+</style>
+</head>
+<body>
+
+<header class="bar">
+  <div class="wrap">
+    <a class="logo" href="#top">Web<b>Core</b>X</a>
+    <a class="tel" href="tel:+3069XXXXXXXX">+30 69X XXX XXXX</a>
+  </div>
+</header>
+
+<main id="top">
+<!-- HERO -->
+<section class="hero" aria-labelledby="h1">
+  <div class="wrap hero-grid">
+    <div>
+      <h1 id="h1">Το Excel σας δουλεύει. Μέχρι να λείψει ο <span class="mark">Γιώργος.</span></h1>
+      <p class="sub">Αν ο Γιώργος πάει διακοπές, ποιος ξέρει πώς δουλεύει αυτό το αρχείο;</p>
+      <p class="nobot">Όχι chatbot. Όχι πωλητής. Ένας developer που θα σας πάρει τηλέφωνο.</p>
+      <div class="me">
+        <div class="avatar" aria-hidden="true">
+          <svg viewBox="0 0 52 52"><rect width="52" height="52" fill="#1B7444"/><circle cx="26" cy="20" r="9" fill="#FBF8EE"/><path d="M8 52c0-12 8-19 18-19s18 7 18 19z" fill="#FBF8EE"/></svg>
+        </div>
+        <p><strong>Γεια, είμαι ο [Όνομα].</strong> Διαβάζω κάθε αρχείο μόνος μου. Το αρχείο σας δεν μπαίνει σε κανένα AI.</p>
+      </div>
+    </div>
+
+    <div class="formcard" id="top-form">
+      <span class="tape" aria-hidden="true"></span>
+      <h2>Στείλτε μου το Excel. Δωρεάν.</h2>
+      <p class="small">Σε 3 εργάσιμες σάς απαντώ προσωπικά. Δεν πουλάω τίποτα σε αυτό το βήμα.</p>
+
+      <form class="f" data-form action="#" method="POST" enctype="multipart/form-data">
+        <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY">
+        <input type="hidden" name="subject" value="Νέο αρχείο για δωρεάν review (σενάριο του Γιώργου)">
+        <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true" style="display:none">
+
+        <div>
+          <label class="drop" for="file-1">
+            <input class="sr" type="file" id="file-1" name="attachment" accept=".xlsx,.xlsm,.xls,.csv" required>
+            <strong>Επιλέξτε ή σύρτε εδώ το αρχείο</strong>
+            <span>.xlsx, .xlsm, .xls, .csv · έως 25 MB</span>
+            <span class="fname" data-fname aria-live="polite"></span>
+          </label>
+        </div>
+        <div class="row2">
+          <div><label class="l" for="name-1">Όνομα</label><input type="text" id="name-1" name="name" autocomplete="name" required></div>
+          <div><label class="l" for="email-1">Email</label><input type="email" id="email-1" name="email" autocomplete="email" required></div>
+        </div>
+        <div><label class="l" for="tel-1">Τηλέφωνο <span class="opt">(προαιρετικό)</span></label><input type="tel" id="tel-1" name="phone" autocomplete="tel"></div>
+        <div><label class="l" for="pain-1">Τι σας ενοχλεί περισσότερο σε αυτό το αρχείο;</label><input type="text" id="pain-1" name="pain"></div>
+        <label class="chk"><input type="checkbox" name="privacy" required><span>Αποδέχομαι την <a href="#">πολιτική απορρήτου</a></span></label>
+        <button class="btn" type="submit">Στείλτε το αρχείο για δωρεάν review</button>
+      </form>
+
+      <div class="call">
+        <b>ή απλά πάρτε με τηλέφωνο</b>
+        <div class="pills">
+          <a href="tel:+3069XXXXXXXX">Τηλέφωνο</a>
+          <a href="viber://chat?number=%2B3069XXXXXXXX">Viber</a>
+          <a href="https://wa.me/3069XXXXXXXX">WhatsApp</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STORY STRIP -->
+<div class="story" aria-labelledby="story-h">
+  <div class="wrap">
+    <span class="kicker">Το σενάριο του Γιώργου</span>
+    <h2 id="story-h">Μια συνηθισμένη εβδομάδα σε ένα συνηθισμένο γραφείο</h2>
+    <p class="lead">Κάθε εταιρεία έχει έναν Γιώργο. Είναι αυτός που «ξέρει το αρχείο».</p>
+
+    <div class="panels">
+      <figure class="panel" style="margin:0 0 0 0">
+        <span class="n" aria-hidden="true">1</span>
+        <svg viewBox="0 0 240 150" role="img" aria-label="Ο Γιώργος μπροστά σε ένα φύλλο Excel">
+          <rect x="14" y="14" width="150" height="100" fill="#fff" stroke="#14201A" stroke-width="2"/>
+          <g stroke="#9AA79F" stroke-width="1"><path d="M14 38h150M14 62h150M14 86h150M64 14v100M114 14v100"/></g>
+          <rect x="14" y="14" width="150" height="24" fill="#E6EAE7" stroke="#14201A" stroke-width="2"/>
+          <rect x="65" y="63" width="48" height="22" fill="#BFE3CB"/>
+          <rect x="115" y="39" width="48" height="22" fill="#FFE98A"/>
+          <circle cx="198" cy="64" r="16" fill="#1B7444" stroke="#14201A" stroke-width="2"/>
+          <path d="M170 124c0-16 12-26 28-26s28 10 28 26z" fill="#1B7444" stroke="#14201A" stroke-width="2"/>
+          <text x="198" y="70" text-anchor="middle" font-family="Commissioner,sans-serif" font-weight="900" font-size="16" fill="#fff">Γ</text>
+          <rect x="20" y="124" width="100" height="18" rx="3" fill="#FFD83D" stroke="#14201A" stroke-width="2"/>
+          <text x="70" y="137" text-anchor="middle" font-family="Commissioner,sans-serif" font-weight="800" font-size="10" fill="#14201A">ΜΗΝ ΑΓΓΙΖΕΤΕ ΣΤΗΛΗ F</text>
+        </svg>
+        <p>Δευτέρα: ο Γιώργος ενημερώνει το αρχείο<span>Με δικό του τρόπο. Πάντα δουλεύει.</span></p>
+      </figure>
+
+      <figure class="panel" style="margin:0">
+        <span class="n" aria-hidden="true">2</span>
+        <svg viewBox="0 0 240 150" role="img" aria-label="Ο Γιώργος σε διακοπές στην παραλία">
+          <rect width="240" height="150" fill="#BFE6F5"/>
+          <circle cx="200" cy="34" r="20" fill="#FFD83D" stroke="#14201A" stroke-width="2"/>
+          <path d="M0 104q30-12 60 0t60 0 60 0 60 0v46H0z" fill="#F4E3A8"/>
+          <path d="M0 98q30-10 60 0t60 0 60 0 60 0" fill="none" stroke="#2D8FB8" stroke-width="5"/>
+          <path d="M60 128V70" stroke="#14201A" stroke-width="3"/>
+          <path d="M26 72a34 30 0 0 1 68 0z" fill="#B3261E" stroke="#14201A" stroke-width="2"/>
+          <path d="M60 72v-30" stroke="#14201A" stroke-width="2"/>
+          <circle cx="120" cy="108" r="10" fill="#1B7444" stroke="#14201A" stroke-width="2"/>
+          <path d="M104 134c0-9 7-16 16-16s16 7 16 16z" fill="#1B7444" stroke="#14201A" stroke-width="2"/>
+          <text x="120" y="112" text-anchor="middle" font-family="Commissioner,sans-serif" font-weight="900" font-size="12" fill="#fff">Γ</text>
+          <rect x="140" y="52" width="84" height="22" rx="11" fill="#fff" stroke="#14201A" stroke-width="2"/>
+          <text x="182" y="67" text-anchor="middle" font-family="Commissioner,sans-serif" font-weight="800" font-size="10" fill="#14201A">Εκτός γραφείου</text>
+        </svg>
+        <p>Ο Γιώργος πάει διακοπές<span>Δικαιωματικά. Το τηλέφωνο όμως δεν το σηκώνει.</span></p>
+      </figure>
+
+      <figure class="panel" style="margin:0">
+        <span class="n" aria-hidden="true">3</span>
+        <svg viewBox="0 0 240 150" role="img" aria-label="Ένα κελί με το σφάλμα #REF! και ερωτηματικά">
+          <rect x="14" y="14" width="150" height="100" fill="#fff" stroke="#14201A" stroke-width="2"/>
+          <g stroke="#9AA79F" stroke-width="1"><path d="M14 38h150M14 62h150M14 86h150M64 14v100M114 14v100"/></g>
+          <rect x="14" y="14" width="150" height="24" fill="#E6EAE7" stroke="#14201A" stroke-width="2"/>
+          <rect x="65" y="63" width="48" height="22" fill="#FBD9D5" stroke="#B3261E" stroke-width="2"/>
+          <text x="89" y="78" text-anchor="middle" font-family="Commissioner,sans-serif" font-weight="900" font-size="12" fill="#B3261E">#REF!</text>
+          <g font-family="Commissioner,sans-serif" font-weight="900" fill="#14201A" font-size="24"><text x="178" y="48" transform="rotate(10 178 48)">?</text><text x="204" y="86" transform="rotate(-12 204 86)">?</text><text x="184" y="124" transform="rotate(8 184 124)">?</text></g>
+          <rect x="20" y="124" width="124" height="18" rx="3" fill="#FFD83D" stroke="#14201A" stroke-width="2"/>
+          <text x="82" y="137" text-anchor="middle" font-family="Commissioner,sans-serif" font-weight="800" font-size="10" fill="#14201A">Ποιος το άλλαξε αυτό;</text>
+        </svg>
+        <p>Κανείς δεν βρίσκει γιατί το #REF!<span>Τρεις καφέδες αργότερα, ακόμα ψάχνουν.</span></p>
+      </figure>
+
+      <figure class="panel" style="margin:0">
+        <span class="n" aria-hidden="true">4</span>
+        <svg viewBox="0 0 240 150" role="img" aria-label="Ένα καθαρό dashboard με γράφημα">
+          <rect x="10" y="10" width="220" height="130" rx="6" fill="#fff" stroke="#14201A" stroke-width="2"/>
+          <rect x="22" y="22" width="60" height="30" rx="4" fill="#DFF0E5" stroke="#14201A" stroke-width="1.5"/>
+          <rect x="90" y="22" width="60" height="30" rx="4" fill="#FFD83D" stroke="#14201A" stroke-width="1.5"/>
+          <rect x="158" y="22" width="60" height="30" rx="4" fill="#DFF0E5" stroke="#14201A" stroke-width="1.5"/>
+          <g fill="#1B7444" stroke="#14201A" stroke-width="1.5"><rect x="30" y="100" width="22" height="30"/><rect x="62" y="84" width="22" height="46"/><rect x="94" y="92" width="22" height="38"/><rect x="126" y="70" width="22" height="60"/><rect x="158" y="78" width="22" height="52"/><rect x="190" y="62" width="22" height="68"/></g>
+          <path d="M22 130h196" stroke="#14201A" stroke-width="2"/>
+        </svg>
+        <p>Λύση: ένα dashboard που δεν εξαρτάται από έναν άνθρωπο<span>Ο Γιώργος γυρίζει και δεν χρειάζεται να εξηγήσει τίποτα.</span></p>
+      </figure>
+    </div>
+
+    <p class="warm">Ο Γιώργος είναι εξαιρετικός. Το πρόβλημα δεν είναι εκείνος. Το πρόβλημα είναι ότι τα πάντα ζουν στο κεφάλι του, και ένα απλό αρχείο έγινε σιγά σιγά ο πυρήνας της δουλειάς σας.</p>
+  </div>
+</div>
+
+<!-- BEFORE / AFTER -->
+<section aria-labelledby="ba-h">
+  <div class="wrap">
+    <span class="kicker">Πριν και μετά</span>
+    <h2 id="ba-h">Το ίδιο αρχείο, χωρίς μυστικά</h2>
+    <p class="lead">Δεν σας λέω να πετάξετε το Excel. Σας δείχνω πώς θα έμοιαζε η ίδια δουλειά, αν δεν χρειαζόταν να τη «διαβάσει» κανείς.</p>
+
+    <div class="ba">
+      <div class="side">
+        <span class="tag">Σήμερα: το αρχείο του Γιώργου</span>
+        <table class="xl" aria-label="Παράδειγμα Excel με χρώματα και σφάλμα">
+          <thead><tr><th>A</th><th>B</th><th>C</th><th>F</th></tr></thead>
+          <tbody>
+            <tr><td>Πελάτης</td><td class="y">Παρ. 1042</td><td class="g">OK</td><td>=VLOOKUP(</td></tr>
+            <tr><td>Αλφα Α.Ε.</td><td class="o">καθυστ.;</td><td>1.250</td><td class="r">#REF!</td></tr>
+            <tr><td>Βήτα ΕΠΕ</td><td class="y">;;</td><td class="g">OK</td><td>=B3*C3</td></tr>
+            <tr><td>Γάμμα</td><td>-</td><td class="o">;</td><td class="r">#N/A</td></tr>
+          </tbody>
+        </table>
+        <span class="note">Μην αγγίζετε τη στήλη F!</span>
+      </div>
+      <div class="side after">
+        <span class="tag">Αύριο: ένα κοινό dashboard</span>
+        <div class="dash">
+          <div class="kpis">
+            <div class="kpi"><small>Ανοιχτές</small><b>42</b></div>
+            <div class="kpi warn"><small>Καθυστερ.</small><b>7</b></div>
+            <div class="kpi"><small>Σήμερα</small><b>€18.4k</b></div>
+          </div>
+          <div class="bars">
+            <svg viewBox="0 0 280 90" role="img" aria-label="Γράφημα με στήλες ανά μήνα" style="display:block;width:100%">
+              <g fill="#1B7444" stroke="#14201A" stroke-width="1.5"><rect x="12" y="46" width="30" height="34"/><rect x="58" y="34" width="30" height="46"/><rect x="104" y="40" width="30" height="40"/><rect x="150" y="22" width="30" height="58"/><rect x="196" y="28" width="30" height="52"/><rect x="242" y="12" width="30" height="68" fill="#FFD83D"/></g>
+              <path d="M8 80h268" stroke="#14201A" stroke-width="2"/>
+            </svg>
+          </div>
+        </div>
+        <p class="after-note">Όλοι βλέπουν το ίδιο. Όποιος λείπει, δεν σταματά τη δουλειά.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT YOU GET -->
+<section aria-labelledby="get-h" style="padding-top:20px">
+  <div class="wrap">
+    <span class="kicker">Δωρεάν review</span>
+    <h2 id="get-h">Τι παίρνετε σε 3 εργάσιμες</h2>
+    <div class="grid4">
+      <article class="sticky"><span class="num">1</span><h3>Ένα βίντεο 5 λεπτών</h3><p>Εξηγώ το δικό σας αρχείο, με τη φωνή μου, με την οθόνη μου.</p></article>
+      <article class="sticky"><span class="num">2</span><h3>3 ευρήματα</h3><p>Πού χάνετε χρόνο, πού κρύβεται κίνδυνος λάθους, τι εξαρτάται από ένα μόνο πρόσωπο.</p></article>
+      <article class="sticky"><span class="num">3</span><h3>Ένα σκίτσο της οθόνης</h3><p>Πώς θα έμοιαζε το dashboard σας.</p></article>
+      <article class="sticky"><span class="num">4</span><h3>Εύρος κόστους και χρόνου</h3><p>«€X–Y, Z εβδομάδες», χωρίς δέσμευση.</p></article>
+    </div>
+  </div>
+</section>
+
+<!-- THREE WAYS -->
+<section aria-labelledby="ways-h" style="padding-top:20px">
+  <div class="wrap">
+    <span class="kicker">Χωρίς άγχος</span>
+    <h2 id="ways-h">Τρεις τρόποι να μου το δείξετε</h2>
+    <p class="lead">Αν διστάζετε να στείλετε το αρχείο, είναι απολύτως λογικό. Διαλέξτε ό,τι σας βολεύει.</p>
+    <div class="ways">
+      <div class="way"><h3><span class="ic" aria-hidden="true">1</span>Ανεβάστε το αρχείο</h3><p>Η φόρμα πάνω. Το ανοίγω μόνο εγώ.</p></div>
+      <div class="way"><h3><span class="ic" aria-hidden="true">2</span>Ανωνυμοποιημένο αντίγραφο</h3><p>Σβήστε ονόματα και ποσά. Το σχήμα του αρχείου μου αρκεί.</p></div>
+      <div class="way"><h3><span class="ic" aria-hidden="true">3</span>15 λεπτά κοινή οθόνη</h3><p>Teams, Meet ή Viber, χωρίς να στείλετε τίποτα.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- CALCULATOR -->
+<section aria-labelledby="calc-h" style="padding-top:20px" id="calc">
+  <div class="wrap">
+    <span class="kicker">Χαμένες ώρες</span>
+    <h2 id="calc-h">Πόσο κοστίζει ο χρόνος που «ταΐζετε» το αρχείο;</h2>
+    <p class="lead">Μια πρόχειρη μέτρηση, για να γίνει ο πόνος αριθμός. Αλλάξτε τα νούμερα και δείτε.</p>
+
+    <div class="calc">
+      <div class="calc-grid">
+        <div>
+          <div class="field">
+            <label for="c-people">Πόσα άτομα δουλεύουν σε αυτό το αρχείο;</label>
+            <input type="number" id="c-people" inputmode="decimal" min="0" step="1" value="3">
+          </div>
+          <div class="field">
+            <label for="c-hours">Πόσες ώρες τη βδομάδα ο καθένας;</label>
+            <input type="number" id="c-hours" inputmode="decimal" min="0" step="0.5" value="5">
+            <p class="hint">Συμπληρώσεις, αντιγραφές, διορθώσεις, «τι έγινε εδώ;».</p>
+          </div>
+          <div class="field">
+            <label for="c-rate">Κόστος ανά ώρα (€)</label>
+            <input type="number" id="c-rate" inputmode="decimal" min="0" step="1" value="15">
+            <p class="hint">Προεπιλογή €15/ώρα. Βάλτε το δικό σας.</p>
+          </div>
+        </div>
+        <div class="result" role="group" aria-labelledby="res-h">
+          <h3 id="res-h">Το αποτέλεσμα</h3>
+          <div aria-live="polite" aria-atomic="true">
+            <div class="big" id="r-eur">≈ €0 τον χρόνο</div>
+            <div class="hrs" id="r-hrs">0 ώρες τον χρόνο</div>
+          </div>
+          <p class="fine">Υπολογισμός με 46 εργάσιμες εβδομάδες τον χρόνο. Δεν είναι υπόσχεση εξοικονόμησης: δείχνει πόσο κοστίζει ο χρόνος που περνά σήμερα το αρχείο.</p>
+          <a class="btn yellow" href="#top-form">Στείλτε μου το αρχείο και δείτε πού πάνε οι ώρες</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHO -->
+<section aria-labelledby="who-h" style="padding-top:20px">
+  <div class="wrap about">
+    <div>
+      <div class="photo" role="img" aria-label="Εδώ μπαίνει η φωτογραφία μου (placeholder)">
+        <svg viewBox="0 0 170 170" aria-hidden="true"><rect width="170" height="170" fill="#1B7444"/><circle cx="85" cy="66" r="30" fill="#FBF8EE"/><path d="M26 170c0-40 26-62 59-62s59 22 59 62z" fill="#FBF8EE"/></svg>
+      </div>
+      <p class="photo-cap">[Φωτογραφία]</p>
+    </div>
+    <div>
+      <span class="kicker">Ποιος είμαι</span>
+      <h2 id="who-h">Γεια, είμαι ο [Όνομα]</h2>
+      <ul>
+        <li>Developer στην Ελλάδα (.NET, Blazor, Python, React). Φτιάχνω εσωτερικές εφαρμογές και dashboards για μικρές και μεσαίες εταιρείες.</li>
+        <li>Διαβάζω μόνος μου κάθε αρχείο και σας μιλάω εγώ, όχι account manager.</li>
+        <li>Αν δεν αξίζει να αλλάξετε κάτι, θα σας το πω.</li>
+      </ul>
+      <div class="projects">
+        <div class="proj"><b>[Έργο 1]</b><br>[Κλάδος]: από Excel σε εφαρμογή, [αποτέλεσμα].</div>
+        <div class="proj"><b>[Έργο 2]</b><br>[Κλάδος]: από Excel σε dashboard, [αποτέλεσμα].</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROMISE -->
+<section aria-labelledby="prom-h" style="padding-top:20px">
+  <div class="wrap">
+    <div class="promise">
+      <h2 id="prom-h">Η υπόσχεσή μου</h2>
+      <ul>
+        <li><svg width="22" height="22" viewBox="0 0 22 22" aria-hidden="true"><circle cx="11" cy="11" r="10" fill="#FFD83D"/><path d="M6 11.5l3.2 3.2L16 7.8" fill="none" stroke="#14201A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Το αρχείο σας το ανοίγω μόνο εγώ.</li>
+        <li><svg width="22" height="22" viewBox="0 0 22 22" aria-hidden="true"><circle cx="11" cy="11" r="10" fill="#FFD83D"/><path d="M6 11.5l3.2 3.2L16 7.8" fill="none" stroke="#14201A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Δεν μπαίνει σε ChatGPT, Copilot ή άλλο AI.</li>
+        <li><svg width="22" height="22" viewBox="0 0 22 22" aria-hidden="true"><circle cx="11" cy="11" r="10" fill="#FFD83D"/><path d="M6 11.5l3.2 3.2L16 7.8" fill="none" stroke="#14201A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Αποθηκεύεται στην ΕΕ και σβήνεται σε 30 μέρες (ή αμέσως, αν το ζητήσετε).</li>
+        <li><svg width="22" height="22" viewBox="0 0 22 22" aria-hidden="true"><circle cx="11" cy="11" r="10" fill="#FFD83D"/><path d="M6 11.5l3.2 3.2L16 7.8" fill="none" stroke="#14201A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>NDA πριν το στείλετε, αν θέλετε.</li>
+      </ul>
+      <p class="phone-line">Αν φτιάξουμε κάτι μαζί, θα έχετε το κινητό μου.</p>
+      <p class="proof">Το αρχείο σας δεν μπαίνει σε κανένα AI. Το διαβάζω εγώ, το σβήνω εγώ. Και το αποδεικνύω: θα δείτε εμένα και την οθόνη μου στο βίντεο των 5 λεπτών, να μιλάω για τα δικά σας κελιά.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section aria-labelledby="faq-h" style="padding-top:20px">
+  <div class="wrap" style="max-width:820px">
+    <span class="kicker">Ερωτήσεις</span>
+    <h2 id="faq-h">Συχνές ερωτήσεις</h2>
+    <details><summary>Γιατί δωρεάν;</summary><p>Γιατί έτσι γνωρίζομαι με εταιρείες που έχουν πραγματικό πρόβλημα. Το review είναι σύντομο (3 ευρήματα, όχι πλήρης διάγνωση). Αν θέλετε να προχωρήσουμε, θα το συζητήσουμε. Αν όχι, δεν χρωστάτε τίποτα.</p></details>
+    <details><summary>Θα με πιέσετε να αγοράσω;</summary><p>Όχι. Αν δεν αξίζει, θα σας το πω.</p></details>
+    <details><summary>Τι γίνεται με το αρχείο μου;</summary><p>Το ανοίγω μόνο εγώ, δεν μπαίνει σε ChatGPT, Copilot ή άλλο AI, αποθηκεύεται στην ΕΕ και σβήνεται σε 30 μέρες (ή αμέσως, αν το ζητήσετε). Αν θέλετε, υπογράφουμε NDA πριν το στείλετε.</p></details>
+    <details><summary>Δεν θα μου πείτε να πετάξω το Excel;</summary><p>Δεν θα σας πω να πετάξετε το Excel. Συχνά η απάντηση είναι «κρατήστε το, αλλάξτε δύο πράγματα». Μια εφαρμογή αξίζει όταν πολλοί δουλεύουν στο ίδιο αρχείο, όταν ένας άνθρωπος κρατά όλη τη γνώση ή όταν τα λάθη κοστίζουν.</p></details>
+    <details><summary>Δεν είναι καλύτερα ένα ERP ή Odoo;</summary><p>Μερικές φορές ναι, και θα σας το πω.</p></details>
+    <details><summary>Μπορεί να επιδοτηθεί;</summary><p>Αν βγει πρόγραμμα που ταιριάζει, θα σας ενημερώσω. Δεν υπόσχομαι επιδότηση που δεν υπάρχει.</p></details>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section aria-labelledby="fin-h" style="padding-top:20px">
+  <div class="wrap final">
+    <div>
+      <h2 id="fin-h">Μην περιμένετε να λείψει ο Γιώργος.</h2>
+      <p class="lead">Στείλτε το αρχείο σήμερα. Σε 3 εργάσιμες έχετε βίντεο, ευρήματα, σκίτσο και εύρος κόστους.</p>
+      <div class="big-call">
+        <a class="btn" href="tel:+3069XXXXXXXX">Πάρτε με τηλέφωνο: +30 69X XXX XXXX</a>
+        <div class="pills">
+          <a href="viber://chat?number=%2B3069XXXXXXXX">Viber</a>
+          <a href="https://wa.me/3069XXXXXXXX">WhatsApp</a>
+          <a href="mailto:[email]@webcorex.dev">[email]@webcorex.dev</a>
+        </div>
+      </div>
+    </div>
+    <div class="formcard">
+      <span class="tape" aria-hidden="true"></span>
+      <h2>Στείλτε μου το Excel. Δωρεάν.</h2>
+      <p class="small">Ό,τι στείλετε, το διαβάζω εγώ και δεν μπαίνει σε κανένα AI.</p>
+      <form class="f" data-form action="#" method="POST" enctype="multipart/form-data">
+        <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY">
+        <input type="hidden" name="subject" value="Νέο αρχείο για δωρεάν review (σενάριο του Γιώργου, κάτω φόρμα)">
+        <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true" style="display:none">
+        <div>
+          <label class="drop" for="file-2">
+            <input class="sr" type="file" id="file-2" name="attachment" accept=".xlsx,.xlsm,.xls,.csv" required>
+            <strong>Επιλέξτε ή σύρτε εδώ το αρχείο</strong>
+            <span>.xlsx, .xlsm, .xls, .csv · έως 25 MB</span>
+            <span class="fname" data-fname aria-live="polite"></span>
+          </label>
+        </div>
+        <div class="row2">
+          <div><label class="l" for="name-2">Όνομα</label><input type="text" id="name-2" name="name" autocomplete="name" required></div>
+          <div><label class="l" for="email-2">Email</label><input type="email" id="email-2" name="email" autocomplete="email" required></div>
+        </div>
+        <div><label class="l" for="tel-2">Τηλέφωνο <span class="opt">(προαιρετικό)</span></label><input type="tel" id="tel-2" name="phone" autocomplete="tel"></div>
+        <div><label class="l" for="pain-2">Τι σας ενοχλεί περισσότερο σε αυτό το αρχείο;</label><input type="text" id="pain-2" name="pain"></div>
+        <label class="chk"><input type="checkbox" name="privacy" required><span>Αποδέχομαι την <a href="#">πολιτική απορρήτου</a></span></label>
+        <button class="btn" type="submit">Στείλτε το αρχείο για δωρεάν review</button>
+      </form>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© WebCoreX</span>
+    <a href="#">Πολιτική απορρήτου</a>
+    <a href="mailto:[email]@webcorex.dev">[email]@webcorex.dev</a>
+  </div>
+</footer>
+
+<script>
+(function(){
+  // ---- Forms ----
+  // NOTE: the submit handler below only shows a thank-you message (no real submission).
+  // To enable real submissions to Web3Forms, remove the preventDefault() interception
+  // (the whole 'submit' listener) and set a real access_key in the hidden input.
+  document.querySelectorAll('form[data-form]').forEach(function(form){
+    var input = form.querySelector('input[type=file]');
+    var drop = form.querySelector('.drop');
+    var fname = form.querySelector('[data-fname]');
+    function show(){
+      fname.textContent = input.files && input.files.length ? input.files[0].name : '';
+    }
+    input.addEventListener('change', show);
+    ['dragenter','dragover'].forEach(function(ev){
+      drop.addEventListener(ev, function(e){ e.preventDefault(); drop.classList.add('over'); });
+    });
+    ['dragleave','drop'].forEach(function(ev){
+      drop.addEventListener(ev, function(e){ e.preventDefault(); drop.classList.remove('over'); });
+    });
+    drop.addEventListener('drop', function(e){
+      if(e.dataTransfer && e.dataTransfer.files && e.dataTransfer.files.length){
+        try { input.files = e.dataTransfer.files; } catch(err){}
+        show();
+      }
+    });
+    form.addEventListener('submit', function(e){
+      e.preventDefault(); // remove this interception to enable Web3Forms
+      var box = document.createElement('div');
+      box.className = 'thanks';
+      box.setAttribute('role','status');
+      box.innerHTML = 'Το πήρα. Θα σας απαντήσω προσωπικά μέσα σε 3 εργάσιμες.<p>Αν βιάζεστε, πάρτε με τηλέφωνο: +30 69X XXX XXXX.</p>';
+      form.replaceWith(box);
+      box.setAttribute('tabindex','-1');
+      box.focus();
+    });
+  });
+
+  // ---- Calculator ----
+  var WEEKS = 46;
+  var fmt = function(n,d){ return n.toLocaleString('el-GR',{maximumFractionDigits:d||0}); };
+  var pe = document.getElementById('c-people'),
+      he = document.getElementById('c-hours'),
+      re = document.getElementById('c-rate'),
+      outE = document.getElementById('r-eur'),
+      outH = document.getElementById('r-hrs');
+  function num(el){
+    var v = parseFloat(String(el.value).replace(',','.'));
+    return isFinite(v) && v > 0 ? v : 0;
+  }
+  function calc(){
+    var hours = num(pe) * num(he) * WEEKS;
+    var eur = hours * num(re);
+    outE.innerHTML = '≈ €' + fmt(Math.round(eur)) + ' <small style="display:block;font-size:.45em;font-weight:700">τον χρόνο</small>';
+    outH.textContent = fmt(Math.round(hours)) + ' ώρες τον χρόνο';
+  }
+  [pe,he,re].forEach(function(el){ el.addEventListener('input', calc); });
+  calc();
+})();
+</script>
+</body>
+</html>

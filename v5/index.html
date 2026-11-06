@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="el">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Excel review v5</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{--ink:#0A0A0A;--muted:#5C5C5C;--line:#E5E5E5;--xl:#107C41}
+  *{box-sizing:border-box}
+  body{margin:0;background:#fff;color:var(--ink);font-family:Inter,system-ui,sans-serif;line-height:1.6}
+  main{max-width:1040px;margin:0 auto;padding:64px 16px}
+  h1{font-weight:500;font-size:clamp(1.8rem,4.5vw,2.6rem);letter-spacing:-.03em;line-height:1.1;margin:0 0 12px}
+  .lead{color:var(--muted);margin:0 0 40px;max-width:62ch}
+  .grid{display:grid;gap:24px;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr))}
+  a.card{display:block;border:1px solid var(--line);border-radius:12px;padding:16px;color:inherit;text-decoration:none}
+  a.card:hover .t,a.card:focus-visible .t{color:var(--xl)}
+  a.card:focus-visible{outline:2px solid var(--xl);outline-offset:2px}
+  .frame{position:relative;width:100%;aspect-ratio:16/10;overflow:hidden;border-radius:8px;border:1px solid var(--line);background:#F7F7F7}
+  .frame iframe{position:absolute;top:0;left:0;width:1280px;height:800px;border:0;transform-origin:0 0;pointer-events:none}
+  .n{font-size:.85rem;color:var(--muted);margin:16px 0 2px}
+  .t{font-weight:600;font-size:1.1rem;margin:0 0 4px}
+  .d{margin:0;color:var(--muted)}
+  footer{margin-top:40px;font-size:.85rem;color:var(--muted)}
+  footer a{color:var(--muted)}
+</style>
+</head>
+<body>
+<main>
+  <h1>«Στείλτε μου το Excel σας»: γύρος 5</h1>
+  <p class="lead">Οι δύο αγαπημένες του γύρου 4, δουλεμένες. Και στις δύο φαίνονται αμέσως ο τίτλος, το πριν/μετά και η φόρμα, και στο κινητό το κουμπί αποστολής φτάνει χωρίς ψάξιμο.</p>
+  <div class="grid">
+    <a class="card" href="v5-1.html"><div class="frame"><iframe src="v5-1.html" title="Προεπισκόπηση v5-1" loading="lazy" tabindex="-1"></iframe></div>
+      <p class="n">v5-1 · βάση η v4-2</p><p class="t">Λογισμικό, πιο καθαρό</p>
+      <p class="d">Τι άλλαξε: πήρε από τη v4-3 περισσότερο κενό, λιγότερα στοιχεία και πιο ήρεμα γκρι. Η φόρμα στο κινητό έγινε πιο σύντομη.</p></a>
+    <a class="card" href="v5-2.html"><div class="frame"><iframe src="v5-2.html" title="Προεπισκόπηση v5-2" loading="lazy" tabindex="-1"></iframe></div>
+      <p class="n">v5-2 · βάση η v4-3</p><p class="t">Έκθεση, με όλα στην πρώτη οθόνη</p>
+      <p class="d">Τι άλλαξε: η «Εικόνα 1» και η φόρμα ανέβηκαν δίπλα στον τίτλο. Στο κινητό η φόρμα δεν είναι πια χαμηλά.</p></a>
+  </div>
+  <footer>Κανόνες: <a href="../v2/RULES.md">RULES.md</a> · Προηγούμενος γύρος: <a href="../v4/index.html">v4</a> · Η φόρμα δεν στέλνει τίποτα (YOUR_ACCESS_KEY).</footer>
+</main>
+<script>
+  function fit(){document.querySelectorAll('.frame').forEach(function(f){var i=f.querySelector('iframe');i.style.transform='scale('+(f.clientWidth/1280)+')';});}
+  addEventListener('resize',fit);fit();
+</script>
+</body>
+</html>

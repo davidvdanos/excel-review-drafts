@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="el">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Excel review: όλες οι εκδοχές</title>
+<style>
+:root{--bg:#f4f4f2;--panel:#fff;--ink:#1d1f1e;--muted:#6b706d;--line:#e2e3df;--accent:#107C41;--accent-soft:#e8f2ec;--stage:#e6e7e3;--star:#c48a00}
+@media (prefers-color-scheme:dark){:root{--bg:#141615;--panel:#1b1e1c;--ink:#eceeec;--muted:#9aa19d;--line:#2d312f;--accent:#3fae73;--accent-soft:#1d3127;--stage:#0e100f;--star:#e3b33a}}
+*{box-sizing:border-box}
+html,body{height:100%;margin:0}
+body{font:14px/1.45 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color:var(--ink);background:var(--bg);display:grid;grid-template-columns:300px 1fr;grid-template-rows:auto 1fr;height:100vh;height:100dvh;overflow:hidden}
+header{grid-column:1/-1;display:flex;align-items:center;gap:10px 14px;padding:10px 16px;background:var(--panel);border-bottom:1px solid var(--line);flex-wrap:wrap}
+.title{font-weight:650;margin-right:auto;display:flex;align-items:center;gap:10px;min-width:0}
+.badge{font-size:11.5px;font-weight:500;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:2px 9px;white-space:nowrap}
+.nav,.tools{display:flex;align-items:center;gap:6px}
+.btn{height:32px;min-width:32px;padding:0 10px;border:1px solid var(--line);background:var(--panel);color:var(--ink);border-radius:8px;font:inherit;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:6px;text-decoration:none;white-space:nowrap}
+.btn:hover{border-color:var(--muted)}
+.btn:focus-visible,.item:focus-visible,select:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.btn:disabled{opacity:.45;cursor:default}
+.btn[aria-pressed="true"]{background:var(--ink);color:var(--panel);border-color:var(--ink)}
+#star[aria-pressed="true"]{background:var(--panel);color:var(--star);border-color:var(--star)}
+.current{min-width:230px;text-align:center;line-height:1.25}
+.current b{display:block;font-weight:600}
+.current span{color:var(--muted);font-size:12px}
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.seg .btn{border:0;border-radius:0;height:30px}
+#pick{display:none;flex:1;min-width:0;height:32px;border:1px solid var(--line);border-radius:8px;background:var(--panel);color:var(--ink);font:inherit;padding:0 8px}
+.side{background:var(--panel);border-right:1px solid var(--line);overflow:auto;padding:4px 0 20px}
+.round h2{font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin:16px 16px 2px;font-weight:600}
+.round p{margin:0 16px 6px;color:var(--muted);font-size:12.5px}
+.item{display:grid;grid-template-columns:30px 1fr 14px;gap:1px 8px;width:100%;text-align:left;background:none;border:0;border-left:3px solid transparent;padding:8px 14px 8px 13px;color:inherit;font:inherit;cursor:pointer}
+.item:hover{background:var(--bg)}
+.item[aria-current="true"]{background:var(--accent-soft);border-left-color:var(--accent)}
+.item .code{grid-column:1;grid-row:1;font-variant-numeric:tabular-nums;font-weight:650;color:var(--accent)}
+.item .name{grid-column:2;grid-row:1;font-weight:600}
+.item .fav{grid-column:3;grid-row:1;color:var(--star);visibility:hidden}
+.item.is-fav .fav{visibility:visible}
+.item .desc{grid-column:2;grid-row:2;color:var(--muted);font-size:12.5px}
+.foot{margin:18px 16px 0;padding-top:14px;border-top:1px solid var(--line);color:var(--muted);font-size:12.5px}
+.foot p{margin:0 0 6px}
+.stage{position:relative;overflow:hidden;background:var(--stage);display:flex;justify-content:center;align-items:stretch;min-height:0}
+.stage iframe{border:0;width:100%;height:100%;background:#fff;display:block}
+.stage.mobile{align-items:center;padding:16px}
+.stage.mobile iframe{width:390px;max-width:100%;height:min(844px,100%);border-radius:16px;box-shadow:0 0 0 1px var(--line),0 14px 44px rgba(0,0,0,.2)}
+@media (max-width:860px){
+  body{grid-template-columns:1fr}
+  header{padding:8px 12px;gap:8px}
+  .side,.seg,.current,.badge,.title{display:none}
+  .nav,.tools{flex:1 1 100%;min-width:0}
+  #copy{flex:1}
+  #pick{display:block}
+  .stage.mobile{padding:0}
+  .stage.mobile iframe{width:100%;height:100%;border-radius:0;box-shadow:none}
+}
+</style>
+</head>
+<body>
+<header>
+  <div class="title">Στείλτε μου το Excel σας: όλες οι εκδοχές <span class="badge">Πρόχειρα · ← → για αλλαγή</span></div>
+  <div class="nav">
+    <button class="btn" id="prev" type="button" aria-label="Προηγούμενη εκδοχή">‹</button>
+    <div class="current" aria-live="polite"><b id="cur-name"></b><span id="cur-count"></span></div>
+    <select id="pick" aria-label="Επιλογή εκδοχής"></select>
+    <button class="btn" id="next" type="button" aria-label="Επόμενη εκδοχή">›</button>
+  </div>
+  <div class="tools">
+    <button class="btn" id="star" type="button" aria-pressed="false"><span class="ic">☆</span><span class="lbl">Μου αρέσει</span></button>
+    <button class="btn" id="copy" type="button" title="Αντιγράφει τη λίστα με όσες σημειώσατε, για να μας τη στείλετε">Αντιγραφή επιλογών (0)</button>
+    <div class="seg" role="group" aria-label="Μέγεθος προβολής">
+      <button class="btn" type="button" data-device="desktop" aria-pressed="true">Υπολογιστής</button>
+      <button class="btn" type="button" data-device="mobile" aria-pressed="false">Κινητό</button>
+    </div>
+    <a class="btn" id="newtab" href="#" target="_blank" rel="noopener" title="Άνοιγμα σε νέα καρτέλα" aria-label="Άνοιγμα σε νέα καρτέλα">↗</a>
+  </div>
+</header>
+<nav class="side" id="list" aria-label="Εκδοχές">
+</nav>
+<main class="stage" id="stage">
+  <iframe id="frame" title="Προεπισκόπηση εκδοχής"></iframe>
+</main>
+<script>
+(function(){
+  var ROUNDS = [
+    {title:'Γύρος 5', note:'Οι δύο τελικές: καθαρό ύφος, φόρμα στην πρώτη οθόνη.', items:[
+      {id:'5-1', file:'v5/v5-1.html', name:'Λογισμικό, πιο καθαρό', desc:'Βάση η 4-2: πριν/μετά σε παράθυρο εφαρμογής δίπλα στη φόρμα, περισσότερο κενό.'},
+      {id:'5-2', file:'v5/v5-2.html', name:'Έκθεση, φόρμα επάνω', desc:'Βάση η 4-3: serif, σκούρο πράσινο, «Εικόνα 1» και φόρμα στην πρώτη οθόνη.'}
+    ]},
+    {title:'Γύρος 4', note:'Σοβαρό ύφος, χωρίς ζωγραφιστά στοιχεία.', items:[
+      {id:'4-1', file:'v4/v4-1.html', name:'Ελβετικό', desc:'Λευκό, μία γραμματοσειρά, αυστηρό πλέγμα. Πράσινο μόνο στο κουμπί.'},
+      {id:'4-2', file:'v4/v4-2.html', name:'Λογισμικό', desc:'Ύφος Stripe/Linear. Πριν/μετά σε παράθυρο εφαρμογής δίπλα στη φόρμα.'},
+      {id:'4-3', file:'v4/v4-3.html', name:'Έκθεση συμβούλων', desc:'Σκούρο πράσινο και ιβουάρ, serif. Το πριν/μετά ως «Εικόνα 1».'}
+    ]},
+    {title:'Γύρος 3', note:'Πιο σοβαρό, serif, με λίγες πινελιές Excel.', items:[
+      {id:'3-1', file:'v3/v3-1.html', name:'Πρώτα η εικόνα', desc:'Ανοίγει με το πριν/μετά: «Θα το δω ως dashboard».'},
+      {id:'3-2', file:'v3/v3-2.html', name:'Πρώτα ο άνθρωπος', desc:'«Θα το διαβάσω εγώ, όχι ένα AI».'},
+      {id:'3-3', file:'v3/v3-3.html', name:'Πρώτα ο πόνος', desc:'«Το Excel σας δουλεύει. Μέχρι να λείψει ο Γιώργος».'}
+    ]},
+    {title:'Γύρος 2', note:'Λιγότερο περιεχόμενο, πράσινο Excel, animation πριν/μετά.', items:[
+      {id:'2-1', file:'v2/v2-1.html', name:'Πρώτα η εικόνα', desc:'Ανοίγει με το πριν/μετά: «Θα το δω ως dashboard».'},
+      {id:'2-2', file:'v2/v2-2.html', name:'Πρώτα ο άνθρωπος', desc:'«Θα το διαβάσω εγώ, όχι ένα AI».'},
+      {id:'2-3', file:'v2/v2-3.html', name:'Πρώτα ο πόνος', desc:'«Το Excel σας δουλεύει. Μέχρι να λείψει ο Γιώργος».'}
+    ]},
+    {title:'Γύρος 1', note:'Οι πρώτες τρεις ιδέες.', items:[
+      {id:'1-A', file:'v1/a-anthropos.html', name:'Άνθρωπος, όχι AI', desc:'Προσωπικός τόνος: «θα το διαβάσω εγώ».'},
+      {id:'1-B', file:'v1/b-giorgos.html', name:'Ο Γιώργος', desc:'Το αρχείο που ξέρει μόνο ένας, με υπολογιστή ωρών.'},
+      {id:'1-C', file:'v1/c-prin-meta.html', name:'Πριν / μετά', desc:'Slider πριν/μετά και τρεις τρόποι να στείλετε το αρχείο.'}
+    ]}
+  ];
+
+  var ALL = [];
+  ROUNDS.forEach(function(r){ r.items.forEach(function(it){ it.round = r; ALL.push(it); }); });
+
+  var $ = function(s){ return document.querySelector(s); };
+  var frame = $('#frame'), stage = $('#stage'), list = $('#list'), pick = $('#pick');
+  var FAV_KEY = 'excel-drafts-favs', DEV_KEY = 'excel-drafts-device';
+  var favs = [];
+  try { favs = JSON.parse(localStorage.getItem(FAV_KEY) || '[]') || []; } catch (e) { favs = []; }
+  var idx = 0;
+
+  ROUNDS.forEach(function(r){
+    var sec = document.createElement('section');
+    sec.className = 'round';
+    var h = document.createElement('h2'); h.textContent = r.title; sec.appendChild(h);
+    var p = document.createElement('p'); p.textContent = r.note; sec.appendChild(p);
+    var og = document.createElement('optgroup'); og.label = r.title;
+    r.items.forEach(function(it){
+      var i = ALL.indexOf(it);
+      var b = document.createElement('button');
+      b.type = 'button'; b.className = 'item';
+      [['code', it.id], ['name', it.name], ['fav', '★'], ['desc', it.desc]].forEach(function(c){
+        var s = document.createElement('span'); s.className = c[0]; s.textContent = c[1];
+        if (c[0] === 'fav') s.setAttribute('aria-hidden', 'true');
+        b.appendChild(s);
+      });
+      b.addEventListener('click', function(){ go(i); });
+      sec.appendChild(b);
+      it.el = b;
+      var o = document.createElement('option');
+      o.value = i; o.textContent = it.id + ' · ' + it.name;
+      og.appendChild(o);
+    });
+    list.appendChild(sec);
+    pick.appendChild(og);
+  });
+  var foot = document.createElement('div');
+  foot.className = 'foot';
+  foot.innerHTML = '<p>Πατήστε «Μου αρέσει» σε όσες ξεχωρίζετε και μετά «Αντιγραφή επιλογών» για να μας τις στείλετε.</p><p>Είναι πρόχειρα για δοκιμή: οι φόρμες δεν στέλνουν τίποτα.</p>';
+  list.appendChild(foot);
+
+  function go(i){
+    idx = (i + ALL.length) % ALL.length;
+    var it = ALL[idx];
+    if (frame.getAttribute('src') !== it.file) frame.setAttribute('src', it.file);
+    $('#cur-name').textContent = it.round.title + ' · ' + it.name;
+    $('#cur-count').textContent = it.id + ' · ' + (idx + 1) + ' από ' + ALL.length;
+    pick.value = String(idx);
+    ALL.forEach(function(x){ x.el.setAttribute('aria-current', x === it ? 'true' : 'false'); });
+    it.el.scrollIntoView({block:'nearest'});
+    $('#newtab').href = it.file;
+    document.title = it.id + ' ' + it.name + ' · Excel review';
+    if (location.hash !== '#' + it.id) history.replaceState(null, '', '#' + it.id);
+    renderFav();
+  }
+
+  function renderFav(){
+    var it = ALL[idx], on = favs.indexOf(it.id) > -1, star = $('#star');
+    star.setAttribute('aria-pressed', on ? 'true' : 'false');
+    star.querySelector('.ic').textContent = on ? '★' : '☆';
+    ALL.forEach(function(x){ x.el.classList.toggle('is-fav', favs.indexOf(x.id) > -1); });
+    var copy = $('#copy');
+    copy.textContent = 'Αντιγραφή επιλογών (' + favs.length + ')';
+    copy.disabled = !favs.length;
+  }
+
+  function saveFavs(){ try { localStorage.setItem(FAV_KEY, JSON.stringify(favs)); } catch (e) {} }
+
+  function flash(msg){
+    var copy = $('#copy');
+    copy.textContent = msg;
+    setTimeout(renderFav, 1600);
+  }
+
+  function fallbackCopy(t){
+    var ta = document.createElement('textarea');
+    ta.value = t; ta.setAttribute('readonly', '');
+    ta.style.position = 'fixed'; ta.style.opacity = '0';
+    document.body.appendChild(ta); ta.select();
+    var ok = false;
+    try { ok = document.execCommand('copy'); } catch (e) {}
+    ta.remove();
+    if (ok) flash('Αντιγράφηκε'); else window.prompt('Αντιγράψτε το κείμενο:', t);
+  }
+
+  $('#prev').addEventListener('click', function(){ go(idx - 1); });
+  $('#next').addEventListener('click', function(){ go(idx + 1); });
+  pick.addEventListener('change', function(){ go(parseInt(pick.value, 10)); });
+
+  $('#star').addEventListener('click', function(){
+    var id = ALL[idx].id, k = favs.indexOf(id);
+    if (k > -1) favs.splice(k, 1); else favs.push(id);
+    saveFavs(); renderFav();
+  });
+
+  $('#copy').addEventListener('click', function(){
+    var picked = ALL.filter(function(x){ return favs.indexOf(x.id) > -1; });
+    if (!picked.length) return;
+    var txt = 'Μου άρεσαν: ' + picked.map(function(x){ return x.id + ' (' + x.name + ')'; }).join(', ');
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(txt).then(function(){ flash('Αντιγράφηκε'); }, function(){ fallbackCopy(txt); });
+    } else fallbackCopy(txt);
+  });
+
+  function setDevice(d){
+    stage.classList.toggle('mobile', d === 'mobile');
+    document.querySelectorAll('[data-device]').forEach(function(b){
+      b.setAttribute('aria-pressed', b.getAttribute('data-device') === d ? 'true' : 'false');
+    });
+    try { localStorage.setItem(DEV_KEY, d); } catch (e) {}
+  }
+  document.querySelectorAll('[data-device]').forEach(function(b){
+    b.addEventListener('click', function(){ setDevice(b.getAttribute('data-device')); });
+  });
+
+  document.addEventListener('keydown', function(e){
+    if (e.altKey || e.ctrlKey || e.metaKey) return;
+    var t = e.target;
+    if (t && t.closest && t.closest('select,input,textarea')) return;
+    if (e.key === 'ArrowRight') { e.preventDefault(); go(idx + 1); }
+    else if (e.key === 'ArrowLeft') { e.preventDefault(); go(idx - 1); }
+  });
+
+  function fromHash(){
+    var id = decodeURIComponent(location.hash.slice(1));
+    for (var i = 0; i < ALL.length; i++) if (ALL[i].id === id) return i;
+    return -1;
+  }
+  window.addEventListener('hashchange', function(){ var i = fromHash(); if (i > -1 && i !== idx) go(i); });
+
+  var dev = 'desktop';
+  try { dev = localStorage.getItem(DEV_KEY) || 'desktop'; } catch (e) {}
+  setDevice(dev === 'mobile' ? 'mobile' : 'desktop');
+  var start = fromHash();
+  go(start > -1 ? start : 0);
+})();
+</script>
+</body>
+</html>

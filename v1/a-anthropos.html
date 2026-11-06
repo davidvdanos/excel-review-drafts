@@ -1,0 +1,476 @@
+<!doctype html>
+<html lang="el">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Στείλτε μου το Excel σας — δωρεάν review από άνθρωπο | WebCoreX</title>
+<meta name="description" content="Στείλτε μου το Excel που δουλεύετε κάθε μέρα. Θα το διαβάσω εγώ, όχι ένα AI, και σε 3 εργάσιμες θα έχετε βίντεο, 3 ευρήματα, σκίτσο dashboard και εύρος κόστους. Δωρεάν.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;0,7..72,700;1,7..72,400;1,7..72,500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#faf7f2;
+  --paper-2:#f3ede2;
+  --card:#fffdf9;
+  --ink:#231e18;
+  --ink-soft:#554c41;
+  --line:#ddd3c2;
+  --accent:#a8412a;      /* terracotta, 5.6:1 on paper */
+  --accent-dark:#8a3220;
+  --accent-wash:#f4e3da;
+  --serif:"Literata","Noto Serif",Georgia,serif;
+  --sans:"Manrope","Segoe UI",system-ui,sans-serif;
+  --r:14px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased;overflow-wrap:break-word}
+img,svg{max-width:100%}
+a{color:var(--accent-dark);text-underline-offset:3px}
+a:hover{color:var(--accent)}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:4px}
+.wrap{width:100%;max-width:1120px;margin:0 auto;padding:0 20px}
+h1,h2,h3{font-family:var(--serif);font-weight:600;line-height:1.18;margin:0 0 .5em;letter-spacing:-.01em}
+h1{font-size:clamp(2rem,6.4vw,3.35rem);font-weight:700}
+h2{font-size:clamp(1.6rem,4.6vw,2.4rem)}
+h3{font-size:1.2rem}
+p{margin:0 0 1em}
+.eyebrow{font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;color:var(--accent-dark);font-weight:700;margin-bottom:.8em}
+.u{position:relative;display:inline-block;white-space:nowrap}
+.u svg{position:absolute;left:-2%;bottom:-.28em;width:104%;height:.4em;overflow:visible}
+.u path{fill:none;stroke:var(--accent);stroke-width:4;stroke-linecap:round;stroke-dasharray:420;stroke-dashoffset:420;animation:draw 1.1s .4s ease-out forwards}
+@keyframes draw{to{stroke-dashoffset:0}}
+section{padding:64px 0}
+.lead{font-size:1.15rem;color:var(--ink-soft);max-width:34em}
+
+/* top bar */
+.top{padding:18px 0;border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.brand{font-family:var(--serif);font-weight:700;font-size:1.05rem;color:var(--ink);text-decoration:none}
+.top a.tel{font-weight:600;font-size:.95rem;color:var(--ink);text-decoration:none}
+.top a.tel:hover{color:var(--accent)}
+
+/* hero */
+.hero{padding:40px 0 56px}
+.hero-grid{display:grid;gap:28px;grid-template-areas:"copy" "form" "person"}
+.hero-copy{grid-area:copy}
+.hero-form{grid-area:form}
+.person{grid-area:person}
+.sub{font-size:1.2rem;color:var(--ink-soft);max-width:30em;margin-top:1.1em}
+@media(min-width:900px){
+  .hero{padding:56px 0 72px}
+  .hero-grid{grid-template-columns:1.05fr .95fr;grid-template-areas:"copy form" "person form";column-gap:56px;row-gap:32px;align-items:start}
+}
+
+/* portrait */
+.person{display:flex;gap:20px;align-items:center}
+.portrait{flex:0 0 auto;width:150px;aspect-ratio:4/5;border-radius:999px 999px 18px 18px;background:linear-gradient(170deg,#e9c9b4,#d49c80 60%,#b9755a);position:relative;overflow:hidden;box-shadow:0 14px 30px -14px rgba(90,40,20,.5);border:4px solid var(--card)}
+.portrait::before{content:"";position:absolute;left:50%;top:24%;width:44%;aspect-ratio:1;transform:translateX(-50%);border-radius:50%;background:#f3d9c6}
+.portrait::after{content:"";position:absolute;left:50%;top:60%;width:92%;height:70%;transform:translateX(-50%);border-radius:50% 50% 0 0;background:#3d3a35}
+.portrait span{position:absolute;z-index:2;left:0;right:0;bottom:6px;text-align:center;font-size:.62rem;letter-spacing:.1em;color:#fff;text-transform:uppercase;font-weight:600}
+@media(min-width:900px){.portrait{width:150px}.hero{padding-top:40px}}
+.hello-mini{display:flex;align-items:center;gap:12px;margin-bottom:18px}
+.hello-mini p{margin:0;font-family:var(--serif);font-size:1.02rem;line-height:1.35}
+.portrait.mini{width:56px;aspect-ratio:1;border-radius:50%;border-width:3px;box-shadow:none}
+@media(min-width:900px){.hello-mini{display:none}}
+.person-text p{margin:0 0 .4em;font-family:var(--serif);font-size:1.2rem;line-height:1.4}
+.sig{font-family:var(--serif);font-style:italic;font-size:1.6rem;color:var(--accent-dark);display:inline-block;transform:rotate(-2deg);margin-top:.2em}
+.sig svg{display:block;width:120px;height:14px;margin-top:-2px}
+
+/* form */
+.formcard{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:24px 22px;box-shadow:0 18px 40px -26px rgba(60,40,20,.45);position:relative}
+.formcard h2{font-size:1.4rem;margin-bottom:.3em}
+.formcard .hint{font-size:.92rem;color:var(--ink-soft);margin-bottom:1em}
+label{display:block;font-weight:600;font-size:.92rem;margin:0 0 .3em}
+.opt{font-weight:400;color:var(--ink-soft)}
+.field{margin-bottom:14px}
+input[type=text],input[type=email],input[type=tel]{width:100%;font:inherit;font-size:1rem;padding:11px 12px;border:1.5px solid #b9ae9b;border-radius:10px;background:#fff;color:var(--ink)}
+input[type=text]:focus,input[type=email]:focus,input[type=tel]:focus{outline:3px solid var(--accent);outline-offset:1px;border-color:var(--accent)}
+.drop{position:relative;border:2px dashed #a99d89;border-radius:12px;padding:20px 14px;text-align:center;background:var(--paper);cursor:pointer;transition:background .2s,border-color .2s}
+.drop:hover,.drop.over{background:var(--accent-wash);border-color:var(--accent)}
+.drop:focus-within{outline:3px solid var(--accent);outline-offset:2px}
+.drop input{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:pointer}
+.drop strong{display:block;font-family:var(--serif);font-size:1.05rem}
+.drop small{color:var(--ink-soft)}
+.drop .fname{display:none;margin-top:6px;font-weight:700;color:var(--accent-dark);word-break:break-all}
+.drop.has .fname{display:block}
+.check{display:flex;gap:10px;align-items:flex-start;font-size:.9rem;font-weight:400}
+.check input{margin-top:.3em;width:18px;height:18px;accent-color:var(--accent);flex:0 0 auto}
+.btn{display:inline-block;width:100%;font:inherit;font-weight:700;font-size:1.02rem;padding:14px 18px;border:0;border-radius:999px;background:var(--accent);color:#fff;cursor:pointer;text-align:center;text-decoration:none;transition:background .2s,transform .15s}
+.btn:hover{background:var(--accent-dark);color:#fff}
+.btn:active{transform:translateY(1px)}
+.btn.inline{width:auto;padding:14px 28px}
+.hp{position:absolute;left:-9999px;opacity:0;height:0;width:0}
+.thanks{display:none;text-align:center;padding:30px 6px}
+.thanks.show{display:block}
+.thanks p{font-family:var(--serif);font-size:1.3rem;margin:0}
+.scarce{margin:16px 0 0;padding:12px 14px;border-left:3px solid var(--accent);background:var(--accent-wash);font-size:.92rem;color:var(--ink);border-radius:0 8px 8px 0}
+.phones{margin-top:18px;padding-top:16px;border-top:1px dashed var(--line);font-size:.95rem}
+.phones b{display:block;margin-bottom:6px}
+.phones a{display:inline-block;margin:0 14px 4px 0;font-weight:600}
+
+/* video */
+.video-sec{padding:8px 0 56px}
+.video{max-width:760px;margin:0 auto}
+.vbox{position:relative;aspect-ratio:16/9;border-radius:var(--r);background:radial-gradient(circle at 30% 30%,#e8c5ae,#c98a6c 55%,#8f5238);overflow:hidden;box-shadow:0 22px 44px -24px rgba(70,30,15,.6);border:5px solid var(--card)}
+.vbox::after{content:"";position:absolute;inset:0;background:repeating-linear-gradient(0deg,rgba(255,255,255,.04) 0 2px,transparent 2px 4px)}
+.play{position:absolute;z-index:2;left:50%;top:50%;transform:translate(-50%,-50%);width:84px;height:84px;border-radius:50%;border:0;background:var(--card);cursor:pointer;display:grid;place-items:center;transition:transform .2s}
+.play:hover{transform:translate(-50%,-50%) scale(1.07)}
+.play svg{width:32px;height:32px;margin-left:5px;fill:var(--accent-dark)}
+.video figcaption{text-align:center;margin-top:12px;color:var(--ink-soft);font-size:.95rem}
+
+/* before/after */
+.ba{background:var(--paper-2)}
+.ba-grid{display:grid;gap:18px;margin-top:28px}
+@media(min-width:760px){.ba-grid{grid-template-columns:1fr 56px 1fr;align-items:center}}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:14px;overflow:hidden}
+.panel h3{font-size:.85rem;font-family:var(--sans);letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:10px}
+.sheet{width:100%;border-collapse:collapse;font-size:.68rem;font-family:Consolas,monospace;table-layout:fixed}
+.sheet td,.sheet th{border:1px solid #cfc7b8;padding:3px 4px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.sheet th{background:#e9e3d6;font-weight:400}
+.sheet .r{background:#f6c4bd}.sheet .y{background:#f7e9a0}.sheet .g{background:#cfe5c3}
+.arrow{text-align:center;color:var(--accent);font-size:2rem;font-family:var(--serif)}
+.arrow span{display:inline-block;transform:rotate(90deg)}
+@media(min-width:760px){.arrow span{transform:none}}
+.dash{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.kpi{border:1px solid var(--line);border-radius:10px;padding:8px 10px;background:var(--paper)}
+.kpi small{display:block;font-size:.7rem;color:var(--ink-soft)}
+.kpi b{font-family:var(--serif);font-size:1.25rem}
+.bars{grid-column:1/-1;display:flex;align-items:flex-end;gap:7px;height:96px;border:1px solid var(--line);border-radius:10px;padding:10px;background:var(--paper)}
+.bars i{flex:1;background:var(--accent);border-radius:4px 4px 0 0;opacity:.85}
+.bars i:nth-child(even){background:#6d7f5e}
+.note{font-size:.88rem;color:var(--ink-soft);margin-top:20px;text-align:center}
+
+/* get */
+.get-grid{display:grid;gap:22px;margin-top:30px;counter-reset:n}
+@media(min-width:760px){.get-grid{grid-template-columns:1fr 1fr}}
+.get{position:relative;padding:22px 22px 22px 70px;background:var(--card);border:1px solid var(--line);border-radius:var(--r)}
+.get::before{counter-increment:n;content:counter(n);position:absolute;left:18px;top:18px;width:38px;height:38px;border-radius:50%;background:var(--accent-wash);color:var(--accent-dark);font-family:var(--serif);font-weight:700;font-size:1.2rem;display:grid;place-items:center}
+.get p{margin:0;color:var(--ink-soft)}
+
+/* ways */
+.ways{background:var(--paper-2)}
+.ways-grid{display:grid;gap:18px;margin-top:28px}
+@media(min-width:860px){.ways-grid{grid-template-columns:repeat(3,1fr)}}
+.way{border-top:3px solid var(--accent);padding-top:14px}
+.way p{color:var(--ink-soft)}
+.way .tag{font-size:.78rem;font-weight:700;color:var(--accent-dark);letter-spacing:.08em;text-transform:uppercase}
+
+/* who */
+.who-grid{display:grid;gap:30px;align-items:center}
+@media(min-width:800px){.who-grid{grid-template-columns:260px 1fr;gap:48px}}
+.who .portrait{width:200px;margin:0 auto}
+@media(min-width:800px){.who .portrait{width:260px}}
+.who ul{padding-left:1.1em;margin:0 0 1em}
+.who li{margin-bottom:.4em}
+.projects{display:grid;gap:12px;margin-top:18px}
+@media(min-width:600px){.projects{grid-template-columns:1fr 1fr}}
+.proj{background:var(--card);border:1px dashed #a99d89;border-radius:12px;padding:14px 16px;font-size:.95rem}
+.proj b{display:block;font-family:var(--serif)}
+
+/* promise letter */
+.letter-sec{padding:72px 0}
+.letter{max-width:720px;margin:0 auto;background:#fffef9;border:1px solid var(--line);padding:38px 28px 34px;position:relative;box-shadow:0 2px 0 #eee6d6,0 26px 50px -30px rgba(60,40,20,.55);transform:rotate(-.4deg);background-image:linear-gradient(transparent 31px,rgba(168,65,42,.07) 32px);background-size:100% 32px}
+@media(min-width:640px){.letter{padding:48px 56px 42px}}
+.letter::before{content:"";position:absolute;top:-12px;left:50%;width:110px;height:26px;transform:translateX(-50%) rotate(2deg);background:rgba(168,65,42,.22)}
+.letter h2{font-size:clamp(1.7rem,5vw,2.3rem)}
+.letter .salut{font-family:var(--serif);font-style:italic;font-size:1.1rem}
+.letter ul{list-style:none;padding:0;margin:1.2em 0}
+.letter li{display:flex;gap:12px;margin-bottom:.8em;font-family:var(--serif);font-size:1.08rem;line-height:1.5}
+.letter li svg{flex:0 0 22px;width:22px;height:22px;margin-top:.25em}
+.letter .big{font-family:var(--serif);font-weight:600;font-size:1.2rem;border-top:1px solid var(--line);padding-top:1em}
+.signature{margin-top:1.4em;font-family:var(--serif);font-style:italic;font-size:1.9rem;color:var(--accent-dark);transform:rotate(-3deg);transform-origin:left;display:inline-block}
+.signature small{display:block;font-family:var(--sans);font-style:normal;font-size:.8rem;color:var(--ink-soft);transform:rotate(3deg)}
+
+/* faq */
+.faq{max-width:760px;margin:0 auto}
+details{border-bottom:1px solid var(--line);padding:4px 0}
+summary{cursor:pointer;font-family:var(--serif);font-weight:600;font-size:1.12rem;padding:14px 30px 14px 0;list-style:none;position:relative}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";position:absolute;right:4px;top:10px;font-size:1.6rem;color:var(--accent);transition:transform .2s}
+details[open] summary::after{transform:rotate(45deg)}
+details p{color:var(--ink-soft);padding:0 8px 14px 0;margin:0}
+
+/* final */
+.final{background:var(--ink);color:#f4eee4;text-align:center}
+.final h2{color:#fffaf0}
+.final p{color:#d9d0c1;max-width:32em;margin-left:auto;margin-right:auto}
+.final .btn{background:#e6a48c;color:#2a1810}
+.final .btn:hover{background:#f2bba6;color:#2a1810}
+.final .phones{border-color:#4d443a;color:#d9d0c1}
+.final .phones a{color:#f4cdbd}
+.final .scarce{background:#332b23;color:#f0e8da;border-color:#e6a48c;text-align:left;max-width:34em;margin:20px auto 0}
+footer{padding:26px 0;font-size:.88rem;color:var(--ink-soft)}
+footer .wrap{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-between}
+
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .u path{animation:none;stroke-dashoffset:0}
+  *{transition:none!important}
+}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#top">WebCoreX</a>
+    <a class="tel" href="tel:+3069XXXXXXXX">Τηλέφωνο: +30 69X XXX XXXX</a>
+  </div>
+</header>
+
+<main id="top">
+<!-- 1. HERO -->
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <div class="hello-mini"><div class="portrait mini" role="img" aria-label="Φωτογραφία: θέση για πορτρέτο"></div><p>Γεια, είμαι ο [Όνομα]. Διαβάζω κάθε αρχείο μόνος μου.</p></div>
+      <p class="eyebrow">Δωρεάν review του Excel σας, από άνθρωπο</p>
+      <h1>Στείλτε μου το Excel σας. Θα το διαβάσω εγώ, <span class="u">όχι ένα AI.<svg viewBox="0 0 200 12" preserveAspectRatio="none" aria-hidden="true"><path d="M2 8 C 30 2, 60 11, 95 5 S 160 3, 198 7"/></svg></span></h1>
+      <p class="sub">Όχι chatbot. Όχι πωλητής. Ένας developer που θα σας πάρει τηλέφωνο.</p>
+    </div>
+
+    <div class="hero-form">
+      <div class="formcard" id="formcard">
+        <h2>Στείλτε το αρχείο σας</h2>
+        <p class="hint">Δωρεάν, χωρίς δέσμευση. Δεν θα σας πω να πετάξετε το Excel.</p>
+
+        <!-- Για να ενεργοποιηθεί η πραγματική αποστολή στο Web3Forms, αφαιρέστε τον έλεγχο submit στο script στο τέλος της σελίδας και βάλτε το σωστό access_key. -->
+        <form id="reviewForm" action="#" method="POST" enctype="multipart/form-data">
+          <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY">
+          <input type="hidden" name="subject" value="Νέο αρχείο για δωρεάν review (Variant A)">
+          <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+          <div class="field">
+            <label for="file">Το αρχείο σας</label>
+            <div class="drop" id="drop">
+              <input type="file" id="file" name="attachment" accept=".xlsx,.xlsm,.xls,.csv" required>
+              <strong>Σύρετε εδώ το Excel ή πατήστε για επιλογή</strong>
+              <small>.xlsx, .xlsm, .xls, .csv · έως 25 MB</small>
+              <span class="fname" id="fname"></span>
+            </div>
+          </div>
+          <div class="field">
+            <label for="name">Όνομα</label>
+            <input type="text" id="name" name="name" required autocomplete="name">
+          </div>
+          <div class="field">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required autocomplete="email">
+          </div>
+          <div class="field">
+            <label for="phone">Τηλέφωνο <span class="opt">(προαιρετικό)</span></label>
+            <input type="tel" id="phone" name="phone" autocomplete="tel">
+          </div>
+          <div class="field">
+            <label for="pain">Τι σας ενοχλεί περισσότερο σε αυτό το αρχείο;</label>
+            <input type="text" id="pain" name="pain" placeholder="π.χ. «το συμπληρώνει μόνο η Μαρία»">
+          </div>
+          <div class="field">
+            <label class="check" for="priv"><input type="checkbox" id="priv" name="privacy" required> <span>Αποδέχομαι την <a href="#">πολιτική απορρήτου</a></span></label>
+          </div>
+          <button class="btn" type="submit">Στείλτε το αρχείο για δωρεάν review</button>
+        </form>
+        <div class="thanks" id="thanks" role="status" aria-live="polite"><p>Το πήρα. Θα σας απαντήσω προσωπικά μέσα σε 3 εργάσιμες.</p></div>
+
+        <p class="scarce">Διαβάζω μόνος μου κάθε αρχείο, γι' αυτό παίρνω μόνο 5 τη βδομάδα. Αυτή τη βδομάδα: 2 θέσεις.</p>
+
+        <div class="phones">
+          <b>ή απλά πάρτε με τηλέφωνο</b>
+          <a href="tel:+3069XXXXXXXX">Τηλέφωνο</a>
+          <a href="viber://chat?number=%2B3069XXXXXXXX">Viber</a>
+          <a href="https://wa.me/3069XXXXXXXX">WhatsApp</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="person">
+      <div class="portrait" role="img" aria-label="Φωτογραφία: θέση για πορτρέτο"><span>φωτογραφία</span></div>
+      <div class="person-text">
+        <p>Γεια, είμαι ο [Όνομα]. Διαβάζω κάθε αρχείο μόνος μου.</p>
+        <span class="sig">[Όνομα]<svg viewBox="0 0 120 14" aria-hidden="true"><path d="M2 9 C 25 2, 40 13, 62 7 S 100 4, 118 8" fill="none" stroke="#a8412a" stroke-width="2" stroke-linecap="round"/></svg></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VIDEO -->
+<section class="video-sec" aria-label="Βίντεο παρουσίασης">
+  <div class="wrap">
+    <figure class="video" style="margin:0 auto">
+      <div class="vbox">
+        <button class="play" type="button" aria-label="Αναπαραγωγή βίντεο (δεν έχει προστεθεί ακόμα)"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3 L21 12 L5 21 Z"/></svg></button>
+      </div>
+      <figcaption>30'' — ποιος είμαι και πώς δουλεύω</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- 2. BEFORE / AFTER -->
+<section class="ba">
+  <div class="wrap">
+    <p class="eyebrow">Πριν και μετά</p>
+    <h2>Το ίδιο αρχείο. Άλλη εικόνα.</h2>
+    <p class="lead">Δεν θα σας πω να πετάξετε το Excel. Θα σας δείξω τι κρύβεται μέσα του και πώς θα μπορούσε να δουλεύει για εσάς.</p>
+    <div class="ba-grid">
+      <div class="panel">
+        <h3>Το αρχείο σήμερα</h3>
+        <table class="sheet" aria-label="Παράδειγμα χαοτικού Excel">
+          <tr><th></th><th>A</th><th>B</th><th>C</th><th>D</th></tr>
+          <tr><th>1</th><td>Πελάτης</td><td>Παρ/γία</td><td>Ποσό</td><td>;;;</td></tr>
+          <tr><th>2</th><td class="r">Παπαδ.</td><td>12/10</td><td class="y">1.240</td><td>ΟΚ</td></tr>
+          <tr><th>3</th><td>Νικολ.</td><td class="r">καθυστ.</td><td>980</td><td>Μαρία;</td></tr>
+          <tr><th>4</th><td class="g">Ιωάν.</td><td>14/10</td><td class="r">#REF!</td><td></td></tr>
+          <tr><th>5</th><td>Γεωργ.</td><td class="y">;;</td><td>2.100</td><td>τελ_v7</td></tr>
+        </table>
+      </div>
+      <div class="arrow" aria-hidden="true"><span>→</span></div>
+      <div class="panel">
+        <h3>Το δικό σας dashboard (σκίτσο)</h3>
+        <div class="dash" aria-label="Παράδειγμα καθαρού dashboard">
+          <div class="kpi"><small>Ανοιχτές</small><b>38</b></div>
+          <div class="kpi"><small>Καθυστερ.</small><b>4</b></div>
+          <div class="kpi"><small>Μήνας</small><b>€42k</b></div>
+          <div class="bars" aria-hidden="true"><i style="height:40%"></i><i style="height:62%"></i><i style="height:48%"></i><i style="height:80%"></i><i style="height:58%"></i><i style="height:92%"></i><i style="height:70%"></i></div>
+        </div>
+      </div>
+    </div>
+    <p class="note">Αριθμοί ενδεικτικοί. Το δικό σας σκίτσο θα έχει τα δικά σας δεδομένα.</p>
+  </div>
+</section>
+
+<!-- 3. TI PAIRNETE -->
+<section>
+  <div class="wrap">
+    <p class="eyebrow">Τι θα πάρετε</p>
+    <h2>Τι παίρνετε σε 3 εργάσιμες</h2>
+    <div class="get-grid">
+      <div class="get"><h3>Βίντεο 5 λεπτών</h3><p>Εξηγώ το δικό σας αρχείο, με τη φωνή μου, με την οθόνη μου.</p></div>
+      <div class="get"><h3>3 ευρήματα</h3><p>Πού χάνετε χρόνο, πού κρύβεται κίνδυνος λάθους, τι εξαρτάται από ένα μόνο πρόσωπο.</p></div>
+      <div class="get"><h3>Σκίτσο της οθόνης</h3><p>Πώς θα έμοιαζε το dashboard σας.</p></div>
+      <div class="get"><h3>Εύρος κόστους και χρόνου</h3><p>«€X–Y, Z εβδομάδες», χωρίς δέσμευση.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 4. TREIS TROPOI -->
+<section class="ways">
+  <div class="wrap">
+    <p class="eyebrow">Χωρίς άγχος</p>
+    <h2>Τρεις τρόποι να μου το δείξετε</h2>
+    <div class="ways-grid">
+      <div class="way"><span class="tag">Α</span><h3>Στείλτε το αρχείο</h3><p>Το ανεβάζετε στη φόρμα. Το ανοίγω μόνο εγώ.</p></div>
+      <div class="way"><span class="tag">Β</span><h3>Ανωνυμοποιημένο αντίγραφο</h3><p>Σβήστε ονόματα και ποσά. Το σχήμα του αρχείου μού φτάνει.</p></div>
+      <div class="way"><span class="tag">Γ</span><h3>15 λεπτά κοινή οθόνη</h3><p>Teams, Meet ή Viber. Δεν στέλνετε τίποτα.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 6. WHO -->
+<section class="who">
+  <div class="wrap who-grid">
+    <div class="portrait" role="img" aria-label="Φωτογραφία: θέση για πορτρέτο"><span>φωτογραφία</span></div>
+    <div>
+      <p class="eyebrow">Ποιος είμαι</p>
+      <h2>Ο [Όνομα], developer στην Ελλάδα</h2>
+      <ul>
+        <li>Φτιάχνω εσωτερικές εφαρμογές και dashboards για επιχειρήσεις, με .NET, Blazor, Python και React.</li>
+        <li>Δουλεύω μόνος, άρα όποιος σας μιλήσει στην αρχή είναι αυτός που θα γράψει τον κώδικα.</li>
+        <li>Μου αρέσει να βρίσκω το ένα αρχείο που πονάει, όχι να σας πουλήσω τα πάντα.</li>
+      </ul>
+      <div class="projects">
+        <div class="proj"><b>[Έργο 1]</b>Placeholder: από Excel παραγγελιών σε εφαρμογή για [κλάδο].</div>
+        <div class="proj"><b>[Έργο 2]</b>Placeholder: πριν και μετά για [κλάδο].</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 7. PROMISE -->
+<section class="letter-sec" style="background:var(--paper-2)">
+  <div class="wrap">
+    <article class="letter" aria-labelledby="promise-h">
+      <h2 id="promise-h">Η υπόσχεσή μου</h2>
+      <p class="salut">Αγαπητέ επιχειρηματία,</p>
+      <p>Ξέρω ότι το αρχείο σας έχει τιμολόγια, πελάτες, ίσως μισθούς. Γι' αυτό σας γράφω ξεκάθαρα τι θα γίνει:</p>
+      <ul>
+        <li><svg viewBox="0 0 22 22" aria-hidden="true"><path d="M3 12 L9 18 L19 4" fill="none" stroke="#a8412a" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Το αρχείο σας το ανοίγω μόνο εγώ.</span></li>
+        <li><svg viewBox="0 0 22 22" aria-hidden="true"><path d="M3 12 L9 18 L19 4" fill="none" stroke="#a8412a" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Δεν μπαίνει σε ChatGPT, Copilot ή άλλο AI.</span></li>
+        <li><svg viewBox="0 0 22 22" aria-hidden="true"><path d="M3 12 L9 18 L19 4" fill="none" stroke="#a8412a" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Αποθηκεύεται στην ΕΕ και σβήνεται σε 30 μέρες (ή αμέσως, αν το ζητήσετε).</span></li>
+        <li><svg viewBox="0 0 22 22" aria-hidden="true"><path d="M3 12 L9 18 L19 4" fill="none" stroke="#a8412a" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>NDA πριν το στείλετε, αν θέλετε.</span></li>
+      </ul>
+      <p class="big">Το αρχείο σας δεν μπαίνει σε κανένα AI. Το διαβάζω εγώ, το σβήνω εγώ. Και αν φτιάξουμε κάτι μαζί, θα έχετε το κινητό μου.</p>
+      <div class="signature">[Όνομα]<small>developer, WebCoreX</small></div>
+    </article>
+  </div>
+</section>
+
+<!-- 8. FAQ -->
+<section>
+  <div class="wrap">
+    <h2 style="text-align:center">Συχνές ερωτήσεις</h2>
+    <div class="faq">
+      <details><summary>Γιατί δωρεάν;</summary><p>Γιατί έτσι γνωρίζω ανθρώπους και εσείς εμένα. Αν σας φανεί χρήσιμο και θέλετε να φτιάξουμε κάτι, μιλάμε. Αν όχι, το review είναι δικό σας.</p></details>
+      <details><summary>Θα με πιέσετε να αγοράσω;</summary><p>Όχι. Αν δεν αξίζει, θα σας το πω. Μερικές φορές η σωστή απάντηση είναι «κρατήστε το Excel και αλλάξτε δύο πράγματα».</p></details>
+      <details><summary>Τι γίνεται με το αρχείο μου;</summary><p>Το ανοίγω μόνο εγώ, δεν μπαίνει σε κανένα AI, αποθηκεύεται στην ΕΕ και σβήνεται σε 30 μέρες, ή αμέσως αν το ζητήσετε. Αν θέλετε, υπογράφουμε NDA πριν το στείλετε.</p></details>
+      <details><summary>Δεν είναι καλύτερα ένα ERP ή Odoo;</summary><p>Μερικές φορές ναι, και θα σας το πω. Ένα ERP έχει νόημα όταν η δουλειά σας ταιριάζει σε έτοιμη διαδικασία. Η custom εφαρμογή έχει νόημα όταν η δική σας δουλειά είναι διαφορετική.</p></details>
+      <details><summary>Μπορεί να επιδοτηθεί;</summary><p>Αν βγει πρόγραμμα που ταιριάζει, θα σας ενημερώσω. Δεν υπόσχομαι επιδότηση που δεν ξέρω ότι υπάρχει.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- 9. FINAL -->
+<section class="final">
+  <div class="wrap">
+    <h2>Στείλτε μου το πιο δύσκολο αρχείο σας.</h2>
+    <p>Θα το διαβάσω εγώ και θα σας απαντήσω προσωπικά μέσα σε 3 εργάσιμες.</p>
+    <a class="btn inline" href="#formcard">Πάμε στη φόρμα</a>
+    <p class="scarce">Διαβάζω μόνος μου κάθε αρχείο, γι' αυτό παίρνω μόνο 5 τη βδομάδα. Αυτή τη βδομάδα: 2 θέσεις.</p>
+    <div class="phones" style="margin-top:28px">
+      <b>ή απλά πάρτε με τηλέφωνο</b>
+      <a href="tel:+3069XXXXXXXX">+30 69X XXX XXXX</a>
+      <a href="viber://chat?number=%2B3069XXXXXXXX">Viber</a>
+      <a href="https://wa.me/3069XXXXXXXX">WhatsApp</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© WebCoreX</span>
+    <a href="#">Πολιτική απορρήτου</a>
+    <a href="mailto:[email]@webcorex.dev">[email]@webcorex.dev</a>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var form=document.getElementById('reviewForm');
+  var file=document.getElementById('file');
+  var drop=document.getElementById('drop');
+  var fname=document.getElementById('fname');
+  var thanks=document.getElementById('thanks');
+
+  function showName(){
+    if(file.files&&file.files.length){fname.textContent=file.files[0].name;drop.classList.add('has');}
+    else{fname.textContent='';drop.classList.remove('has');}
+  }
+  file.addEventListener('change',showName);
+  ['dragenter','dragover'].forEach(function(e){drop.addEventListener(e,function(){drop.classList.add('over');});});
+  ['dragleave','drop'].forEach(function(e){drop.addEventListener(e,function(){drop.classList.remove('over');});});
+
+  // ΠΡΟΣΟΧΗ: το preventDefault παρακάτω σταματά την πραγματική αποστολή.
+  // Αφαιρέστε αυτόν τον listener (και βάλτε το σωστό access_key) για να δουλέψει το Web3Forms.
+  form.addEventListener('submit',function(ev){
+    ev.preventDefault();
+    form.style.display='none';
+    thanks.classList.add('show');
+    thanks.scrollIntoView({block:'center'});
+  });
+})();
+</script>
+</body>
+</html>
