@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="robots" content="noindex,nofollow">
-<title>Excel review: όλες οι εκδοχές</title>
+<title>Excel review: παραλλαγές της 5-1</title>
 <style>
 :root{--bg:#f4f4f2;--panel:#fff;--ink:#1d1f1e;--muted:#6b706d;--line:#e2e3df;--accent:#107C41;--accent-soft:#e8f2ec;--stage:#e6e7e3;--star:#c48a00}
 @media (prefers-color-scheme:dark){:root{--bg:#141615;--panel:#1b1e1c;--ink:#eceeec;--muted:#9aa19d;--line:#2d312f;--accent:#3fae73;--accent-soft:#1d3127;--stage:#0e100f;--star:#e3b33a}}
@@ -58,7 +58,7 @@ header{grid-column:1/-1;display:flex;align-items:center;gap:10px 14px;padding:10
 </head>
 <body>
 <header>
-  <div class="title">Στείλτε μου το Excel σας: όλες οι εκδοχές <span class="badge">Πρόχειρα · ← → για αλλαγή</span></div>
+  <div class="title">Στείλτε μου το Excel σας: παραλλαγές της 5-1 <span class="badge">Πρόχειρα · ← → για αλλαγή</span></div>
   <div class="nav">
     <button class="btn" id="prev" type="button" aria-label="Προηγούμενη εκδοχή">‹</button>
     <div class="current" aria-live="polite"><b id="cur-name"></b><span id="cur-count"></span></div>
@@ -83,29 +83,15 @@ header{grid-column:1/-1;display:flex;align-items:center;gap:10px 14px;padding:10
 <script>
 (function(){
   var ROUNDS = [
-    {title:'Γύρος 5', note:'Οι δύο τελικές: καθαρό ύφος, φόρμα στην πρώτη οθόνη.', items:[
-      {id:'5-1', file:'v5/v5-1.html', name:'Λογισμικό, πιο καθαρό', desc:'Βάση η 4-2: πριν/μετά σε παράθυρο εφαρμογής δίπλα στη φόρμα, περισσότερο κενό.'},
-      {id:'5-2', file:'v5/v5-2.html', name:'Έκθεση, φόρμα επάνω', desc:'Βάση η 4-3: serif, σκούρο πράσινο, «Εικόνα 1» και φόρμα στην πρώτη οθόνη.'}
+    {title:'Παραλλαγές της 5-1', note:'Στόχος η συζήτηση ή η επίσκεψη στην Αττική. Το Excel είναι προαιρετικό.', items:[
+      {id:'6-1', file:'v6/v6-1.html', name:'Καφές και Excel', desc:'«Φέρτε το Excel. Τον καφέ τον φέρνω εγώ.» Επίσκεψη στο γραφείο σας.'},
+      {id:'6-2', file:'v6/v6-2.html', name:'Αν λείψει ο συνάδελφος', desc:'Ο κίνδυνος του αρχείου που το ξέρει μόνο ένας άνθρωπος.'},
+      {id:'6-3', file:'v6/v6-3.html', name:'Πόσες ώρες τρώει', desc:'Αριθμομηχανή: άτομα × ώρες, και μετά ραντεβού 20 λεπτών.'},
+      {id:'6-4', file:'v6/v6-4.html', name:'Εργαλείο ή ρίσκο;', desc:'Τεστ 6 ερωτήσεων με αποτέλεσμα, και μετά ραντεβού.'},
+      {id:'6-5', file:'v6/v6-5.html', name:'8 επισκέψεις τον μήνα', desc:'Πολύ σύντομη σελίδα, λίγες θέσεις, τηλέφωνο πρώτο.'}
     ]},
-    {title:'Γύρος 4', note:'Σοβαρό ύφος, χωρίς ζωγραφιστά στοιχεία.', items:[
-      {id:'4-1', file:'v4/v4-1.html', name:'Ελβετικό', desc:'Λευκό, μία γραμματοσειρά, αυστηρό πλέγμα. Πράσινο μόνο στο κουμπί.'},
-      {id:'4-2', file:'v4/v4-2.html', name:'Λογισμικό', desc:'Ύφος Stripe/Linear. Πριν/μετά σε παράθυρο εφαρμογής δίπλα στη φόρμα.'},
-      {id:'4-3', file:'v4/v4-3.html', name:'Έκθεση συμβούλων', desc:'Σκούρο πράσινο και ιβουάρ, serif. Το πριν/μετά ως «Εικόνα 1».'}
-    ]},
-    {title:'Γύρος 3', note:'Πιο σοβαρό, serif, με λίγες πινελιές Excel.', items:[
-      {id:'3-1', file:'v3/v3-1.html', name:'Πρώτα η εικόνα', desc:'Ανοίγει με το πριν/μετά: «Θα το δω ως dashboard».'},
-      {id:'3-2', file:'v3/v3-2.html', name:'Πρώτα ο άνθρωπος', desc:'«Θα το διαβάσω εγώ, όχι ένα AI».'},
-      {id:'3-3', file:'v3/v3-3.html', name:'Πρώτα ο πόνος', desc:'«Το Excel σας δουλεύει. Μέχρι να λείψει ο Γιώργος».'}
-    ]},
-    {title:'Γύρος 2', note:'Λιγότερο περιεχόμενο, πράσινο Excel, animation πριν/μετά.', items:[
-      {id:'2-1', file:'v2/v2-1.html', name:'Πρώτα η εικόνα', desc:'Ανοίγει με το πριν/μετά: «Θα το δω ως dashboard».'},
-      {id:'2-2', file:'v2/v2-2.html', name:'Πρώτα ο άνθρωπος', desc:'«Θα το διαβάσω εγώ, όχι ένα AI».'},
-      {id:'2-3', file:'v2/v2-3.html', name:'Πρώτα ο πόνος', desc:'«Το Excel σας δουλεύει. Μέχρι να λείψει ο Γιώργος».'}
-    ]},
-    {title:'Γύρος 1', note:'Οι πρώτες τρεις ιδέες.', items:[
-      {id:'1-A', file:'v1/a-anthropos.html', name:'Άνθρωπος, όχι AI', desc:'Προσωπικός τόνος: «θα το διαβάσω εγώ».'},
-      {id:'1-B', file:'v1/b-giorgos.html', name:'Ο Γιώργος', desc:'Το αρχείο που ξέρει μόνο ένας, με υπολογιστή ωρών.'},
-      {id:'1-C', file:'v1/c-prin-meta.html', name:'Πριν / μετά', desc:'Slider πριν/μετά και τρεις τρόποι να στείλετε το αρχείο.'}
+    {title:'Η αρχική', note:'Η εκδοχή που προτιμήθηκε στην πρώτη δοκιμή.', items:[
+      {id:'5-1', file:'v5/v5-1.html', name:'Λογισμικό, καθαρό', desc:'Πριν/μετά σε παράθυρο εφαρμογής δίπλα στη φόρμα αποστολής αρχείου.'}
     ]}
   ];
 
@@ -146,7 +132,7 @@ header{grid-column:1/-1;display:flex;align-items:center;gap:10px 14px;padding:10
   });
   var foot = document.createElement('div');
   foot.className = 'foot';
-  foot.innerHTML = '<p>Πατήστε «Μου αρέσει» σε όσες ξεχωρίζετε και μετά «Αντιγραφή επιλογών» για να μας τις στείλετε.</p><p>Είναι πρόχειρα για δοκιμή: οι φόρμες δεν στέλνουν τίποτα.</p>';
+  foot.innerHTML = '<p>Πατήστε «Μου αρέσει» σε όσες ξεχωρίζετε και μετά «Αντιγραφή επιλογών» για να μας τις στείλετε.</p><p>Είναι πρόχειρα για δοκιμή: οι φόρμες δεν στέλνουν τίποτα.</p><p><a href="backup/excel-drafts-rounds-1-5.zip" download>Κατεβάστε τις παλιές εκδοχές (γύροι 1–5, zip)</a></p>';
   list.appendChild(foot);
 
   function go(i){

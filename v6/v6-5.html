@@ -4,21 +4,20 @@
 <meta name="robots" content="noindex,nofollow">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Στείλτε μου το Excel σας. Θα το δείτε ως dashboard. | WebCoreX</title>
-<meta name="description" content="Δωρεάν ματιά από έναν developer, όχι από AI. Σε 3 εργάσιμες βλέπετε το δικό σας αρχείο ως εφαρμογή: βίντεο 5 λεπτών, 3 ευρήματα, σκίτσο dashboard και εύρος τιμής.">
+<title>8 επισκέψεις τον μήνα στην Αττική | WebCoreX</title>
+<meta name="description" content="Κάθε μήνα επισκέπτομαι μόνος μου 8 επιχειρήσεις στην Αττική. Κλείστε μία θέση: 20 λεπτά στο γραφείο σας, στο τηλέφωνο ή σε βιντεοκλήση.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400&display=swap&subset=greek" rel="stylesheet">
 <style>
 :root{
-  --page:#FAFAFA; --surface:#FFFFFF; --subtle:#F4F4F5; --line:#E4E4E7; --line-2:#D4D4D8;
-  --text:#09090B; --text-2:#52525B; --text-3:#71717A;
+  --page:#F7F7F5; --surface:#FFFFFF; --subtle:#F1F1EE; --line:#E6E6E2; --line-2:#D6D6D1;
+  --text:#18181B; --text-2:#55555C; --text-3:#5F5F66;
   --acc:#107C41; --acc-h:#0B6B37; --acc-tint:#E8F3EC; --ring:rgba(16,124,65,.25);
   --err:#B42318;
   --sans:'Inter',system-ui,-apple-system,'Segoe UI',Roboto,Arial,sans-serif;
   --mono:'JetBrains Mono',ui-monospace,SFMono-Regular,Consolas,monospace;
-  --sh-card:0 1px 2px rgba(0,0,0,.04),0 8px 24px -12px rgba(0,0,0,.12);
-  --sh-win:0 30px 60px -30px rgba(0,0,0,.25),0 1px 2px rgba(0,0,0,.05);
+  --sh-win:0 24px 48px -32px rgba(0,0,0,.22),0 1px 2px rgba(0,0,0,.04);
   --s1:4px; --s2:8px; --s3:12px; --s4:16px; --s5:24px; --s6:32px; --s7:48px; --s8:64px; --s9:96px;
 }
 *{box-sizing:border-box}
@@ -26,8 +25,8 @@ html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
 body{margin:0;background:var(--page);color:var(--text-2);font-family:var(--sans);font-size:16px;line-height:1.6;font-weight:400;overflow-wrap:break-word;-webkit-font-smoothing:antialiased}
 p{margin:0}
 h1,h2,h3{margin:0;color:var(--text);font-weight:600}
-h1{font-size:clamp(2.4rem,5vw,4rem);line-height:1.05;letter-spacing:-.03em}
-h2{font-size:clamp(1.5rem,2.4vw,2rem);line-height:1.2;letter-spacing:-.025em}
+h1{font-size:clamp(1.75rem,3.3vw,2.5rem);line-height:1.12;letter-spacing:-.028em}
+h2{font-size:clamp(1.25rem,2vw,1.5rem);line-height:1.25;letter-spacing:-.02em}
 a{color:var(--acc);text-underline-offset:3px}
 a:hover{color:var(--acc-h)}
 ::selection{background:var(--acc-tint);color:var(--text)}
@@ -38,65 +37,58 @@ a:hover{color:var(--acc-h)}
 .label{font-family:var(--mono);font-size:12px;line-height:1.4;color:var(--text-3);letter-spacing:.02em}
 
 /* top bar */
-.bar{background:var(--surface);border-bottom:1px solid var(--line)}
-.bar .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:56px}
-.logo{font-weight:600;font-size:1.05rem;letter-spacing:-.02em;color:var(--text);text-decoration:none}
-.tel{font-weight:500;font-size:.95rem;color:var(--text);text-decoration:none;min-height:44px;display:inline-flex;align-items:center;white-space:nowrap;font-variant-numeric:tabular-nums}
+.bar{border-bottom:1px solid var(--line)}
+.bar .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:48px}
+.logo{font-weight:600;font-size:1rem;letter-spacing:-.02em;color:var(--text);text-decoration:none}
+.tel{font-size:.9375rem;color:var(--text-2);text-decoration:none;min-height:44px;display:inline-flex;align-items:center;white-space:nowrap;font-variant-numeric:tabular-nums}
 .tel:hover{color:var(--acc)}
 
 /* hero */
-.hero{padding:var(--s6) 0 var(--s8)}
-.intro{text-align:center;max-width:860px;margin:0 auto var(--s6)}
-.eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:500;color:var(--text-2);margin-bottom:var(--s4);line-height:1.4}
-.eyebrow i{width:6px;height:6px;border-radius:50%;background:var(--acc);display:block;flex:none}
+.hero{padding:var(--s4) 0 var(--s5)}
+.intro{text-align:center;max-width:900px;margin:0 auto var(--s4)}
 .intro h1 span{display:inline}
-.sub{margin:var(--s4) auto 0;max-width:60ch;font-size:1.0625rem;color:var(--text-2)}
-.facts{margin:var(--s4) 0 0;padding:0;list-style:none;display:flex;flex-wrap:wrap;justify-content:center;gap:4px 0;font-size:13px;color:var(--text-2);line-height:1.5}
-.facts li{padding:0 12px;position:relative}
-.facts li+li::before{content:"";position:absolute;left:0;top:50%;width:1px;height:12px;margin-top:-6px;background:var(--line-2)}
-.facts b{font-family:var(--mono);font-weight:400;font-variant-numeric:tabular-nums;color:var(--text)}
-
+.sub{margin:var(--s2) auto 0;max-width:56ch;font-size:.9375rem;line-height:1.5}
+.sub .lg{display:none}
 .band2{display:grid;grid-template-columns:minmax(0,1fr);gap:var(--s7);align-items:start}
 
 /* form card */
-.card{background:var(--surface);border:1px solid var(--line);border-radius:12px;box-shadow:var(--sh-card);padding:var(--s5) var(--s4)}
-.card h2{font-size:1.125rem;letter-spacing:-.015em;margin-bottom:var(--s4)}
-.f{display:grid;gap:var(--s4)}
-.f label.l{display:block;font-weight:500;font-size:14px;color:var(--text);margin-bottom:6px;line-height:1.4}
-.req{color:var(--text-3);font-weight:400}
-.opt{font-weight:400;color:var(--text-3)}
-.f input[type=text],.f input[type=email],.f input[type=tel]{width:100%;font:inherit;font-size:16px;color:var(--text);min-height:44px;padding:8px 12px;background:var(--surface);border:1px solid var(--line);border-radius:8px;transition:border-color .15s,box-shadow .15s}
-.f input[type=text]:hover,.f input[type=email]:hover,.f input[type=tel]:hover{border-color:var(--line-2)}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:var(--s4)}
+.f{display:grid;gap:var(--s3)}
+.f label.l{display:block;font-weight:500;font-size:14px;color:var(--text);margin-bottom:4px;line-height:1.4}
+.req,.opt{color:var(--text-3);font-weight:400}
+.f input[type=text],.f input[type=email],.f input[type=tel]{width:100%;font:inherit;font-size:16px;color:var(--text);min-height:44px;padding:8px 12px;background:var(--surface);border:1px solid var(--line-2);border-radius:8px;transition:border-color .15s,box-shadow .15s}
 .f input[type=text]:focus,.f input[type=email]:focus,.f input[type=tel]:focus{outline:none;border-color:var(--acc);box-shadow:0 0 0 3px var(--ring)}
-.hint{font-size:14px;color:var(--text-3);margin-top:6px;line-height:1.45}
-.drop{position:relative;display:flex;gap:var(--s3);align-items:center;border:1px dashed var(--line-2);border-radius:10px;background:var(--page);padding:var(--s4);min-height:76px;cursor:pointer;transition:border-color .15s,background .15s}
+.hint{font-size:14px;color:var(--text-3);margin-top:4px;line-height:1.4}
+.hint.lg{display:none}
+.drop{position:relative;display:flex;gap:var(--s3);align-items:center;border:1px dashed var(--line-2);border-radius:10px;background:var(--page);padding:var(--s3) var(--s4);min-height:64px;cursor:pointer;transition:border-color .15s,background .15s}
 .drop:hover,.drop.over{border-color:var(--acc);background:var(--acc-tint)}
 .drop:focus-within{border-color:var(--acc);box-shadow:0 0 0 3px var(--ring)}
-.drop .ic{flex:none;width:36px;height:36px;border-radius:8px;background:var(--surface);border:1px solid var(--line);display:grid;place-items:center;color:var(--text-2)}
+.drop .ic{flex:none;color:var(--text-2);display:grid}
 .drop-t{display:block;min-width:0}
 .drop-t strong{display:block;font-weight:500;font-size:15px;line-height:1.35;color:var(--text)}
 .drop-t span{display:block;font-size:14px;color:var(--text-3);line-height:1.4}
 .drop-t .fname{font-weight:500;color:var(--acc);word-break:break-all}
 .drop-t .fname:empty{display:none}
-.priv{display:flex;gap:8px;align-items:flex-start;font-size:14px;line-height:1.45;color:var(--text-3);margin-top:calc(var(--s2) * -1)}
+.priv{display:flex;gap:8px;align-items:flex-start;font-size:14px;line-height:1.4;color:var(--text-3);margin-top:calc(var(--s1) * -1)}
 .priv svg{flex:none;margin-top:3px}
+.more summary{display:flex;align-items:center;min-height:44px;padding:0;font-size:14px;font-weight:500;color:var(--acc);cursor:pointer;list-style:none}
+.more summary::-webkit-details-marker{display:none}
+.more summary:hover{text-decoration:underline;text-underline-offset:3px}
+.more[open] summary{margin-bottom:4px}
+.more .fld{display:grid;gap:var(--s3);padding-bottom:var(--s2)}
 .chk{display:flex;gap:12px;font-size:14px;min-height:44px;align-items:center;color:var(--text-2)}
 .chk input{width:18px;height:18px;flex:none;accent-color:var(--acc);margin:0}
-.btn{font-family:var(--sans);font-weight:500;font-size:15px;line-height:1.3;background:var(--acc);color:#fff;border:0;border-radius:8px;padding:10px 20px;min-height:44px;cursor:pointer;text-align:center;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:8px;box-shadow:inset 0 1px 0 rgba(255,255,255,.18),0 1px 2px rgba(0,0,0,.12);transition:background .15s}
+.btn{font-family:var(--sans);font-weight:500;font-size:15px;line-height:1.3;background:var(--acc);color:#fff;border:0;border-radius:8px;padding:10px 20px;min-height:48px;cursor:pointer;text-align:center;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:8px;transition:background .15s}
 .btn:hover{background:var(--acc-h);color:#fff}
-.btn:focus-visible{outline:2px solid var(--acc);outline-offset:3px}
 .f .btn{width:100%}
-.after-btn{font-size:14px;text-align:center;color:var(--text-3);margin-top:calc(var(--s2) * -1)}
-.alt{font-size:14px;color:var(--text-2);border-top:1px solid var(--line);padding-top:var(--s4);margin-top:var(--s4);line-height:1.7}
+.after-btn{font-size:14px;text-align:center;color:var(--text-3);margin-top:calc(var(--s1) * -1)}
+.alt{font-size:14px;color:var(--text-2);border-top:1px solid var(--line);padding-top:var(--s3);margin-top:var(--s3);line-height:1.7}
 .alt a{font-weight:500;display:inline-block;padding:0 2px}
-.human{display:flex;gap:12px;align-items:center;margin-top:var(--s4);padding-top:var(--s4);border-top:1px solid var(--line);font-size:14px;line-height:1.45;color:var(--text-2)}
-.avatar{flex:none;width:36px;height:36px;border-radius:50%;background:var(--subtle);border:1px solid var(--line);display:grid;place-items:center;font-size:12px;font-weight:500;color:var(--text-2);letter-spacing:.02em}
-.human strong{color:var(--text);font-weight:500}
 .hp{display:none!important}
 .thanks{background:var(--acc-tint);border:1px solid #BFDCCB;border-radius:10px;padding:var(--s5);font-size:1.0625rem;line-height:1.55;font-weight:500;color:var(--text)}
 
 /* product shot */
-.shot-cap{display:flex;justify-content:space-between;align-items:baseline;gap:12px;margin:0 2px 12px}
+.shot-cap{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:4px 12px;margin:0 2px 12px}
 .shot-cap strong{font-size:14px;font-weight:500;color:var(--text)}
 .win{background:var(--surface);border:1px solid var(--line);border-radius:12px;box-shadow:var(--sh-win);overflow:hidden}
 .win-top{height:32px;background:var(--page);border-bottom:1px solid var(--line);display:flex;align-items:center;gap:6px;padding:0 12px}
@@ -168,72 +160,92 @@ a:hover{color:var(--acc-h)}
 .bdg.ok{background:var(--acc-tint);color:#0B5A2F}.bdg.ok::before{background:var(--acc)}
 .bdg.late{background:#FEE4E2;color:var(--err)}.bdg.late::before{background:var(--err)}
 
+/* v6-5 additions */
+.tel b{font-weight:500;color:var(--text);margin-right:6px}
+.avail{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:6px 10px;margin:var(--s3) auto 0;font-size:14px;color:var(--text-2)}
+.dots{display:inline-flex;gap:5px}
+.dots i{width:9px;height:9px;border-radius:50%;border:1.5px solid var(--acc);display:block}
+.dots i.t{background:var(--line-2);border-color:var(--line-2)}
+.callbox{display:grid;justify-items:center;gap:0;margin-top:var(--s3)}
+.btn-o{font-weight:500;font-size:16px;line-height:1.3;min-height:48px;display:inline-flex;align-items:center;justify-content:center;width:100%;max-width:343px;padding:10px 20px;color:var(--text);background:var(--surface);border:1.5px solid var(--text);border-radius:8px;text-decoration:none;font-variant-numeric:tabular-nums}
+.btn-o:hover{color:var(--text);background:var(--subtle)}
+.msg{font-size:14px;color:var(--text-2);display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:0 6px}
+.msg a{font-weight:500;min-height:44px;display:inline-flex;align-items:center;padding:0 4px}
+.or{font-weight:600;font-size:1rem;color:var(--text);margin-bottom:var(--s3)}
+.how{border:0;margin:0;padding:0;min-width:0}
+.how legend{padding:0;display:block;font-weight:500;font-size:14px;color:var(--text);margin-bottom:6px;line-height:1.4}
+.pr{display:flex;flex-wrap:wrap;gap:8px}
+.pill{display:block;min-width:0;max-width:100%;cursor:pointer}
+.pill span{display:flex;align-items:center;min-height:44px;padding:0 14px;font-size:14px;color:var(--text-2);background:var(--surface);border:1px solid var(--line-2);border-radius:999px;transition:border-color .15s,background .15s}
+.pill:hover span{border-color:var(--text-3)}
+.pill input:checked+span{border-color:var(--acc);background:var(--acc-tint);color:var(--text);font-weight:500}
+.pill input:focus-visible+span{outline:2px solid var(--acc);outline-offset:3px}
+.more .priv{margin-top:0}
+.checks{margin-top:0}
+.checks li:last-child{border-bottom:1px solid var(--line)}
+
 /* sections */
 .sec{padding:var(--s8) 0 0}
-.sec-h{margin-bottom:var(--s5)}
-.sec-h .label{margin-bottom:8px;display:block}
+.sec h2{margin-bottom:var(--s5)}
 
-/* get: joined feature grid */
-.feat{display:grid;grid-template-columns:minmax(0,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:12px;overflow:hidden}
-.cell{background:var(--surface);padding:var(--s5);display:flex;flex-direction:column;gap:12px}
-.cell .ic{width:32px;height:32px;border-radius:8px;border:1px solid var(--line);background:var(--page);display:grid;place-items:center;color:var(--text-2)}
-.cell p{color:var(--text);font-weight:500;line-height:1.45}
-.cell small{display:block;font-weight:400;font-size:14px;color:var(--text-2);margin-top:2px;line-height:1.5}
+/* get */
+.get{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:minmax(0,1fr);border-top:1px solid var(--line)}
+.get li{padding:var(--s4) 0;border-bottom:1px solid var(--line);color:var(--text);font-weight:500;line-height:1.45}
+.get small{display:block;font-weight:400;font-size:14px;color:var(--text-2);margin-top:2px}
 
 /* trust */
-.trust{display:grid;grid-template-columns:minmax(0,1fr);gap:var(--s5);background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:var(--s5);box-shadow:var(--sh-card)}
-.portrait{width:100%;max-width:240px}
-.ph{aspect-ratio:4/5;border-radius:10px;background:var(--subtle);border:1px solid var(--line);overflow:hidden}
+.trust{display:grid;grid-template-columns:minmax(0,1fr);gap:var(--s5)}
+.trust h2{margin:0}
+.ph{width:96px;aspect-ratio:4/5;border-radius:10px;background:var(--subtle);border:1px solid var(--line);overflow:hidden}
 .ph svg{display:block;width:100%;height:100%}
-.portrait .label{margin-top:8px}
-.trust h2{font-size:clamp(1.35rem,2vw,1.6rem)}
-.trust .who{margin-top:8px;color:var(--text-2)}
-.checks{list-style:none;margin:var(--s5) 0 0;padding:0}
-.checks li{display:flex;gap:12px;align-items:flex-start;padding:12px 0;border-top:1px solid var(--line);color:var(--text)}
-.checks svg{flex:none;margin-top:4px}
-.phone-line{margin-top:var(--s4);font-weight:500;color:var(--text);padding-top:var(--s4);border-top:1px solid var(--line)}
+.trust .who{margin-top:8px}
+.checks{list-style:none;margin:var(--s4) 0 0;padding:0}
+.checks li{display:flex;gap:12px;align-items:flex-start;padding:10px 0;border-top:1px solid var(--line);color:var(--text)}
+.checks svg{flex:none;margin-top:5px}
+.phone-line{margin-top:var(--s4);color:var(--text)}
 
 /* faq */
-.faq{border:1px solid var(--line);border-radius:12px;background:var(--surface);overflow:hidden}
-details+details{border-top:1px solid var(--line)}
-summary{cursor:pointer;font-weight:500;font-size:1rem;line-height:1.4;color:var(--text);padding:var(--s4) var(--s5);min-height:56px;list-style:none;display:flex;justify-content:space-between;gap:var(--s4);align-items:center}
-summary::-webkit-details-marker{display:none}
-summary::after{content:"";flex:none;width:8px;height:8px;border-right:1.5px solid var(--text-3);border-bottom:1.5px solid var(--text-3);transform:rotate(45deg);margin-top:-4px;transition:transform .15s}
-details[open] summary::after{transform:rotate(-135deg);margin-top:4px}
-summary:hover{background:var(--page)}
-summary:focus-visible{outline-offset:-3px}
-details p{padding:0 var(--s5) var(--s5);max-width:62ch}
+.faq{border-top:1px solid var(--line)}
+.faq details{border-bottom:1px solid var(--line)}
+.faq summary{cursor:pointer;font-weight:500;font-size:1rem;line-height:1.4;color:var(--text);padding:var(--s3) 0;min-height:56px;list-style:none;display:flex;justify-content:space-between;gap:var(--s4);align-items:center}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"";flex:none;width:8px;height:8px;border-right:1.5px solid var(--text-3);border-bottom:1.5px solid var(--text-3);transform:rotate(45deg);margin-top:-4px;transition:transform .15s}
+.faq details[open] summary::after{transform:rotate(-135deg);margin-top:4px}
+.faq summary:focus-visible{outline-offset:-3px}
+.faq details p{padding:0 0 var(--s4);max-width:62ch}
 
 /* closing */
-.final{margin-top:var(--s9);background:#09090B;color:#fff;padding:var(--s8) 0}
-.final .wrap{display:grid;gap:var(--s5);justify-items:start}
-.final h2{color:#fff;max-width:22ch;font-size:clamp(1.6rem,3vw,2.25rem)}
-.final .pills{display:flex;flex-wrap:wrap;gap:0 var(--s5)}
-.pills a{color:#E4E4E7;font-weight:500;font-size:15px;min-height:44px;display:inline-flex;align-items:center;text-underline-offset:3px}
-.pills a:hover{color:#fff}
-.final :focus-visible{outline-color:#fff}
-.final .btn:focus-visible{outline-color:#fff}
-footer{padding:var(--s5) 0;font-size:14px;color:var(--text-3);background:var(--page)}
+.final{margin-top:var(--s8);border-top:1px solid var(--line);background:var(--surface);padding:var(--s7) 0}
+.final .wrap{display:grid;gap:var(--s4);justify-items:start}
+.final h2{margin:0;max-width:24ch}
+.pills{display:flex;flex-wrap:wrap;gap:0 var(--s5)}
+.pills a{font-weight:500;font-size:15px;min-height:44px;display:inline-flex;align-items:center}
+footer{padding:var(--s4) 0 var(--s5);font-size:14px;color:var(--text-3);background:var(--surface)}
 footer .wrap{display:flex;flex-wrap:wrap;gap:8px var(--s5);justify-content:space-between}
 footer a{color:var(--text-2)}
 footer a:hover{color:var(--acc)}
 
-@media (min-width:560px){
-  .feat{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .card{padding:var(--s5)}
-}
 @media (min-width:700px){
   .intro h1 span{display:block}
-  .trust{grid-template-columns:220px minmax(0,1fr);gap:var(--s7);padding:var(--s6)}
+  .intro{margin-bottom:var(--s5)}
+  .sub{font-size:1.0625rem}
+  .sub .lg{display:inline}
+  .hint.lg{display:block}
+  .hero{padding:var(--s5) 0 var(--s8)}
+  .card{padding:var(--s5)}
+  .f{gap:14px}
+  .drop{min-height:72px}
+  .get{grid-template-columns:repeat(2,minmax(0,1fr));column-gap:var(--s7)}
+  .trust{grid-template-columns:96px minmax(0,1fr);gap:var(--s6)}
   .final .wrap{grid-template-columns:1fr auto;align-items:center}
-  .final .pills{grid-column:1/-1}
+  .pills{grid-column:1/-1}
   .sec{padding-top:var(--s9)}
+  .final{margin-top:var(--s9)}
 }
 @media (min-width:960px){
   .wrap{padding:0 var(--s5)}
-  .hero{padding:var(--s6) 0 var(--s9)}
   .band2{grid-template-columns:440px minmax(0,1fr);gap:var(--s7)}
-  .feat{grid-template-columns:repeat(4,minmax(0,1fr))}
+  .get{grid-template-columns:repeat(4,minmax(0,1fr));column-gap:var(--s5)}
 }
 @media (max-width:600px){
   .stage{width:480px;height:540px}
@@ -242,11 +254,6 @@ footer a:hover{color:var(--acc)}
   .srch{display:none}
   .xl-rib span:nth-child(n+4){display:none}
   .xl-title{padding:0 76px}
-  .intro{margin-bottom:var(--s5)}
-  .facts{font-size:13px}
-  .final{margin-top:var(--s8)}
-  summary{padding:var(--s3) var(--s4)}
-  details p{padding:0 var(--s4) var(--s4)}
 }
 @media (prefers-reduced-motion:reduce){
   *{transition:none!important;animation:none!important;scroll-behavior:auto!important}
@@ -258,7 +265,7 @@ footer a:hover{color:var(--acc)}
 <header class="bar">
   <div class="wrap">
     <a class="logo" href="#top">WebCoreX</a>
-    <a class="tel" href="tel:+3069XXXXXXXX">+30 69X XXX XXXX</a>
+    <a class="tel" href="tel:+3069XXXXXXXX"><b>Καλέστε με</b>+30 69X XXX XXXX</a>
   </div>
 </header>
 
@@ -267,47 +274,51 @@ footer a:hover{color:var(--acc)}
 <section class="hero" aria-labelledby="h1">
   <div class="wrap">
     <div class="intro">
-      <p class="eyebrow"><i aria-hidden="true"></i>Δωρεάν review από άνθρωπο</p>
-      <h1 id="h1"><span>Στείλτε μου το Excel σας.</span> <span>Θα το δείτε ως dashboard.</span></h1>
-      <p class="sub">Δωρεάν ματιά από έναν developer, όχι από AI. Σε 3 εργάσιμες βλέπετε το δικό σας αρχείο ως εφαρμογή.</p>
-      <ul class="facts">
-        <li>Βίντεο <b>5</b> λεπτών</li>
-        <li><b>3</b> ευρήματα</li>
-        <li>Σκίτσο dashboard</li>
-        <li>Εύρος τιμής</li>
-        <li>Σε <b>3</b> εργάσιμες</li>
-      </ul>
+      <h1 id="h1">8 επισκέψεις τον μήνα στην Αττική.</h1>
+      <p class="sub">Τις κάνω μόνος μου, γι' αυτό είναι μόνο 8.<span class="lg"> Σε 20 λεπτά βλέπουμε μαζί αν το Excel σας μπορεί να γίνει εφαρμογή.</span></p>
+      <p class="avail"><span class="dots" role="img" aria-label="5 από τις 8 θέσεις έχουν κλείσει"><i class="t"></i><i class="t"></i><i class="t"></i><i class="t"></i><i class="t"></i><i></i><i></i><i></i></span><span>Νοέμβριος: έμειναν 3 θέσεις</span></p>
+      <div class="callbox">
+        <a class="btn-o" href="tel:+3069XXXXXXXX">Καλέστε με: +30 69X XXX XXXX</a>
+        <p class="msg">ή γράψτε μου στο <a href="viber://chat?number=%2B3069XXXXXXXX">Viber</a> · <a href="https://wa.me/3069XXXXXXXX">WhatsApp</a></p>
+      </div>
     </div>
 
     <div class="band2">
       <!-- FORM -->
       <div id="form-area">
         <div class="card" id="formcard">
-          <h2>Στείλτε το αρχείο σας</h2>
-          <form class="f" id="rf" action="#" method="POST" enctype="multipart/form-data">
+          <p class="or">ή αφήστε μου το τηλέφωνό σας</p>
+          <form class="f" id="rf" action="#" method="POST" enctype="multipart/form-data" aria-label="Κλείστε μία από τις 3 θέσεις">
             <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY">
-            <input type="hidden" name="subject" value="Νέο αρχείο για δωρεάν review (v4-2)">
+            <input type="hidden" name="subject" value="Νέο αίτημα συζήτησης (v6-5)">
             <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
 
-            <div>
-              <label class="drop" for="file">
-                <input class="sr" type="file" id="file" name="attachment" accept=".xlsx,.xlsm,.xls,.csv" required>
-                <span class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 16V4m0 0L7.5 8.5M12 4l4.5 4.5"/><path d="M4 15v3a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-3"/></svg></span>
-                <span class="drop-t"><strong>Επιλέξτε ή σύρτε εδώ το αρχείο</strong><span>.xlsx, .xlsm, .xls, .csv · έως 25 MB</span><span class="fname" data-fname aria-live="polite"></span></span>
-              </label>
-            </div>
-            <p class="priv"><svg width="14" height="16" viewBox="0 0 14 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="1.5" y="7" width="11" height="8" rx="1.5"/><path d="M4 7V5a3 3 0 0 1 6 0v2"/></svg><span>Το βλέπω μόνο εγώ · Δεν μπαίνει σε κανένα AI · Σβήνεται σε 30 μέρες</span></p>
-
             <div><label class="l" for="name">Όνομα <span class="req">*</span></label><input type="text" id="name" name="name" autocomplete="name" required></div>
-            <div><label class="l" for="email">Email <span class="req">*</span></label><input type="email" id="email" name="email" autocomplete="email" required aria-describedby="email-h"><p class="hint" id="email-h">Εδώ θα σας στείλω το βίντεο. Όχι newsletter.</p></div>
-            <div><label class="l" for="tel">Τηλέφωνο <span class="opt">(προαιρετικό)</span></label><input type="tel" id="tel" name="phone" autocomplete="tel"></div>
-            <div><label class="l" for="pain">Τι σας ενοχλεί περισσότερο σε αυτό το αρχείο; <span class="opt">(προαιρετικό)</span></label><input type="text" id="pain" name="pain"></div>
+            <div><label class="l" for="tel">Τηλέφωνο <span class="req">*</span></label><input type="tel" id="tel" name="phone" autocomplete="tel" inputmode="tel" required></div>
+            <div><label class="l" for="email">Email <span class="opt">(προαιρετικό)</span></label><input type="email" id="email" name="email" autocomplete="email"></div>
+            <fieldset class="how">
+              <legend class="l">Πώς προτιμάτε;</legend>
+              <div class="pr">
+                <label class="pill"><input class="sr" type="radio" name="how" value="visit" checked><span>Επίσκεψη στο γραφείο σας</span></label>
+                <label class="pill"><input class="sr" type="radio" name="how" value="phone"><span>Τηλέφωνο</span></label>
+                <label class="pill"><input class="sr" type="radio" name="how" value="video"><span>Βιντεοκλήση</span></label>
+              </div>
+            </fieldset>
+            <details class="more">
+              <summary>+ Αν θέλετε, στείλτε το Excel από πριν</summary>
+              <div class="fld">
+                <label class="drop" for="file">
+                  <input class="sr" type="file" id="file" name="attachment" accept=".xlsx,.xlsm,.xls,.csv">
+                  <span class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 16V4m0 0L7.5 8.5M12 4l4.5 4.5"/><path d="M4 15v3a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-3"/></svg></span>
+                  <span class="drop-t"><strong>Επιλέξτε ή σύρτε εδώ το αρχείο</strong><span>.xlsx, .xlsm, .xls, .csv · έως 25 MB</span><span class="fname" data-fname aria-live="polite"></span></span>
+                </label>
+                <p class="priv"><svg width="14" height="16" viewBox="0 0 14 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="1.5" y="7" width="11" height="8" rx="1.5"/><path d="M4 7V5a3 3 0 0 1 6 0v2"/></svg><span>Το βλέπω μόνο εγώ. Δεν το περνάω σε κανένα AI. Σβήνεται σε 30 μέρες.</span></p>
+              </div>
+            </details>
             <label class="chk"><input type="checkbox" name="privacy" required><span>Αποδέχομαι την <a href="#">πολιτική απορρήτου</a></span></label>
-            <button class="btn" type="submit">Στείλτε το αρχείο για δωρεάν review</button>
-            <p class="after-btn">Απάντηση προσωπικά σε 3 εργάσιμες. Χωρίς δέσμευση.</p>
+            <button class="btn" type="submit">Κλείστε μία από τις 3 θέσεις</button>
+            <p class="after-btn">Σας παίρνω εγώ τηλέφωνο μέσα σε μία εργάσιμη. Χωρίς δέσμευση.</p>
           </form>
-          <p class="alt">Προτιμάτε να μιλήσουμε πρώτα; <a href="tel:+3069XXXXXXXX">Τηλέφωνο</a> · <a href="viber://chat?number=%2B3069XXXXXXXX">Viber</a> · <a href="https://wa.me/3069XXXXXXXX">WhatsApp</a> · 15 λεπτά κοινή οθόνη</p>
-          <div class="human"><span class="avatar" aria-hidden="true">ΟΝ</span><p><strong>[Όνομα], developer</strong> · Διαβάζω κάθε αρχείο μόνος μου, όχι AI</p></div>
         </div>
       </div>
 
@@ -321,7 +332,7 @@ footer a:hover{color:var(--acc)}
               <!-- BEFORE -->
               <div class="layer before">
                 <div class="xl">
-                  <div class="xl-title">Παραγγελίες_ΤΕΛΙΚΟ_v3.xlsx — Excel</div>
+                  <div class="xl-title">Παραγγελίες_ΤΕΛΙΚΟ_v3.xlsx · Excel</div>
                   <div class="xl-rib"><span>Αρχείο</span><span class="on">Κεντρική</span><span>Εισαγωγή</span><span>Τύποι</span><span>Δεδομένα</span></div>
                   <div class="xl-fx"><span class="nb">F4</span><i>fx</i><code>=VLOOKUP(B4;Τιμές!A:C;3;0)*E4</code></div>
                   <div class="xl-body">
@@ -416,65 +427,14 @@ footer a:hover{color:var(--acc)}
   </div>
 </section>
 
-<!-- ΣΕ 3 ΕΡΓΑΣΙΜΕΣ ΠΑΙΡΝΕΤΕ -->
-<section class="sec" style="padding-top:0" aria-labelledby="get-h">
-  <div class="wrap">
-    <div class="sec-h"><span class="label">Δωρεάν review</span><h2 id="get-h">Σε 3 εργάσιμες παίρνετε</h2></div>
-    <div class="feat">
-      <div class="cell"><span class="ic"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="1.75" y="3" width="12.5" height="10" rx="2"/><path d="M6.75 6v4l3.25-2z"/></svg></span><p>Βίντεο 5 λεπτών για το δικό σας αρχείο</p></div>
-      <div class="cell"><span class="ic"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="8" cy="8" r="6.25"/><path d="M5.25 8.25l1.9 1.9 3.6-4"/></svg></span><p>3 ευρήματα<small>χρόνος, λάθη, εξάρτηση από ένα πρόσωπο</small></p></div>
-      <div class="cell"><span class="ic"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="1.75" y="2.25" width="12.5" height="11.5" rx="2"/><path d="M1.75 6h12.5M6 6v7.75"/></svg></span><p>Σκίτσο του dashboard σας</p></div>
-      <div class="cell"><span class="ic"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="8" cy="8" r="6.25"/><path d="M8 4.5V8l2.25 1.5"/></svg></span><p>Εύρος κόστους και χρόνου<small>χωρίς δέσμευση</small></p></div>
-    </div>
-  </div>
-</section>
-
 <!-- TRUST -->
-<section class="sec" aria-labelledby="who-h">
+<section class="sec" aria-label="Για εμένα">
   <div class="wrap">
-    <div class="sec-h"><span class="label">Ποιος το διαβάζει</span></div>
-    <div class="trust">
-      <div class="portrait">
-        <div class="ph" role="img" aria-label="Εδώ μπαίνει η φωτογραφία μου (placeholder)"><svg viewBox="0 0 200 250" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><circle cx="100" cy="100" r="36" fill="#D4D4D8"/><path d="M28 250c0-54 32-86 72-86s72 32 72 86z" fill="#D4D4D8"/></svg></div>
-        <p class="label">Φωτογραφία</p>
-      </div>
-      <div>
-        <h2 id="who-h">[Όνομα]</h2>
-        <p class="who">Developer στην Ελλάδα. Φτιάχνω εσωτερικές εφαρμογές και dashboards (.NET, Blazor, Python, React).</p>
-        <ul class="checks">
-          <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="#107C41" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8.5l3.25 3.25L13 4.5"/></svg>Το αρχείο το ανοίγω μόνο εγώ</li>
-          <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="#107C41" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8.5l3.25 3.25L13 4.5"/></svg>Δεν μπαίνει σε ChatGPT, Copilot ή άλλο AI</li>
-          <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="#107C41" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8.5l3.25 3.25L13 4.5"/></svg>Αποθήκευση στην ΕΕ, διαγραφή σε 30 μέρες (ή αμέσως)</li>
-          <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="#107C41" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8.5l3.25 3.25L13 4.5"/></svg>NDA πριν το στείλετε, αν θέλετε</li>
-        </ul>
-        <p class="phone-line">Αν φτιάξουμε κάτι μαζί, θα έχετε το κινητό μου.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- FAQ -->
-<section class="sec" aria-labelledby="faq-h">
-  <div class="wrap">
-    <div class="sec-h"><span class="label">Ερωτήσεις</span><h2 id="faq-h">Πριν το στείλετε</h2></div>
-    <div class="faq">
-      <details><summary>Γιατί δωρεάν;</summary><p>Γιατί έτσι με γνωρίζετε χωρίς ρίσκο. Αν σας φανεί χρήσιμο, μιλάμε για τη συνέχεια.</p></details>
-      <details><summary>Θα με πιέσετε να αγοράσω;</summary><p>Όχι. Αν δεν αξίζει, θα σας το πω. Ίσως η απάντηση είναι: κρατήστε το Excel, αλλάξτε 2 πράγματα.</p></details>
-      <details><summary>Δεν είναι καλύτερα ένα ERP ή Odoo;</summary><p>Μερικές φορές ναι, και θα σας το πω.</p></details>
-    </div>
-  </div>
-</section>
-
-<!-- CLOSING CTA -->
-<section class="final" aria-labelledby="fin-h">
-  <div class="wrap">
-    <h2 id="fin-h">Στείλτε μου το Excel. Θα το δω εγώ.</h2>
-    <a class="btn" href="#form-area" id="cta-final">Στείλτε το αρχείο για δωρεάν review</a>
-    <div class="pills">
-      <a href="tel:+3069XXXXXXXX">Τηλέφωνο</a>
-      <a href="viber://chat?number=%2B3069XXXXXXXX">Viber</a>
-      <a href="https://wa.me/3069XXXXXXXX">WhatsApp</a>
-    </div>
+    <ul class="checks">
+      <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="#107C41" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8.5l3.25 3.25L13 4.5"/></svg>Τα μηνύματά σας τα διαβάζω εγώ.</li>
+      <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="#107C41" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8.5l3.25 3.25L13 4.5"/></svg>Τα αρχεία σας δεν μπαίνουν σε κανένα AI και σβήνονται σε 30 μέρες.</li>
+      <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="#107C41" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8.5l3.25 3.25L13 4.5"/></svg>Αν φτιάξουμε κάτι μαζί, θα έχετε το κινητό μου.</li>
+    </ul>
   </div>
 </section>
 </main>
@@ -592,18 +552,11 @@ footer a:hover{color:var(--acc)}
     } else go();
   }
 
-  /* ---------- Closing CTA: scroll to form and focus the file input ---------- */
-  var file = document.getElementById('file');
-  document.getElementById('cta-final').addEventListener('click', function(e){
-    e.preventDefault();
-    document.getElementById('form-area').scrollIntoView({behavior: reduce ? 'auto' : 'smooth', block: 'start'});
-    setTimeout(function(){ try { file.focus({preventScroll:true}); } catch(_){ file.focus(); } }, reduce ? 0 : 450);
-  });
-
   /* ---------- Form ---------- */
   // NOTE: the submit handler below only shows the thank-you card (no real submission).
   // To enable real submissions to Web3Forms: delete this whole 'submit' listener
   // (so the browser posts the form to the action URL) and set a real access_key in the hidden input.
+  var file = document.getElementById('file');
   var form = document.getElementById('rf');
   var drop = form.querySelector('.drop');
   var fname = form.querySelector('[data-fname]');
@@ -628,11 +581,15 @@ footer a:hover{color:var(--acc)}
     e.preventDefault(); // remove this interception to enable Web3Forms
     if (!form.reportValidity()) return;
     var name = (document.getElementById('name').value || '').trim();
+    var how = (form.querySelector('input[name=how]:checked') || {}).value;
+    var what = how === 'visit' ? ' Θα σας πάρω τηλέφωνο μέσα σε μία εργάσιμη να κλείσουμε μέρα για την επίσκεψη στο γραφείο σας.'
+             : how === 'video' ? ' Θα σας πάρω τηλέφωνο μέσα σε μία εργάσιμη να κλείσουμε ώρα για τη βιντεοκλήση.'
+             : ' Θα σας πάρω τηλέφωνο μέσα σε μία εργάσιμη.';
     var box = document.createElement('div');
     box.className = 'thanks';
     box.setAttribute('role','status');
     box.setAttribute('tabindex','-1');
-    box.textContent = (name ? 'Ευχαριστώ, ' + name + '. ' : 'Ευχαριστώ. ') + 'Το πήρα. Θα σας απαντήσω προσωπικά μέσα σε 3 εργάσιμες. — [Όνομα]';
+    box.textContent = (name ? 'Ευχαριστώ, ' + name + '.' : 'Ευχαριστώ.') + what + ' [Όνομα]';
     form.replaceWith(box);
     box.focus();
   });
