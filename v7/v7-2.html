@@ -1,11 +1,11 @@
 <!doctype html>
 <html lang="el">
 <head>
-<meta name="robots" content="noindex,nofollow">
 <meta charset="utf-8">
+<meta name="robots" content="noindex,nofollow">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Το Excel σας είναι εργαλείο ή ρίσκο; Τεστ 1 λεπτού | WebCoreX</title>
-<meta name="description" content="6 ερωτήσεις με ναι ή όχι για το Excel της επιχείρησής σας. Σε 1 λεπτό βλέπετε αν είναι ακόμα εργαλείο ή έγινε ρίσκο.">
+<title>Το Excel σας είναι ακόμα εργαλείο ή έγινε ρίσκο; | WebCoreX</title>
+<meta name="description" content="6 ερωτήσεις με ναι ή όχι, 1 λεπτό. Δείτε αν το Excel σας είναι ακόμα εργαλείο ή έγινε ρίσκο, και μιλήστε μαζί μου 20 λεπτά στο τηλέφωνο, σε βιντεοκλήση ή στο γραφείο σας στην Αττική.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400&display=swap&subset=greek" rel="stylesheet">
@@ -286,6 +286,30 @@ footer a:hover{color:var(--acc)}
   .band3{grid-template-columns:minmax(0,560px) minmax(0,1fr);gap:var(--s8)}
   .trust{grid-template-columns:96px minmax(0,1fr)}
 }
+
+/* v7-2: quiz leads, calculator collapsed */
+.hero .area{font-size:14px;color:var(--text-3);text-align:center}
+.res h3{font-size:1.125rem}
+.calcd{margin-top:var(--s3);background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:0 var(--s4)}
+.calcd summary{display:flex;align-items:center;min-height:48px;font-size:15px;font-weight:500;color:var(--acc);cursor:pointer;list-style:none}
+.calcd summary::-webkit-details-marker{display:none}
+.calcd summary::after{content:"";margin-left:auto;flex:none;width:8px;height:8px;border-right:1.5px solid var(--text-3);border-bottom:1.5px solid var(--text-3);transform:rotate(45deg);margin-top:-4px;transition:transform .15s}
+.calcd[open] summary::after{transform:rotate(-135deg);margin-top:4px}
+.calcd summary:hover{text-decoration:underline;text-underline-offset:3px}
+.calc-in{padding-bottom:var(--s4)}
+.crow{display:grid;grid-template-columns:minmax(0,1fr) 96px;gap:var(--s3);align-items:center;padding:6px 0;border-bottom:1px solid var(--line)}
+.crow label{font-weight:500;font-size:14px;line-height:1.35;color:var(--text);min-width:0}
+.crow label small{display:block;font-weight:400;font-size:13px;color:var(--text-3)}
+.crow input{width:100%;font:inherit;font-size:16px;color:var(--text);min-height:44px;padding:8px 12px;background:var(--surface);border:1px solid var(--line-2);border-radius:8px;text-align:right;font-variant-numeric:tabular-nums;transition:border-color .15s,box-shadow .15s}
+.crow input:focus{outline:none;border-color:var(--acc);box-shadow:0 0 0 3px var(--ring)}
+.cres{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--s3);padding:var(--s3) 0 var(--s2)}
+.cres div{min-width:0}
+.cres b{display:block;font-size:clamp(1.375rem,6vw,1.75rem);line-height:1.1;font-weight:600;letter-spacing:-.025em;color:var(--text);font-variant-numeric:tabular-nums}
+.cres span{display:block;font-size:14px;color:var(--text-2);margin-top:2px}
+.how{font-size:13px;color:var(--text-3);line-height:1.4}
+.honest{color:var(--text);font-size:15px;line-height:1.5;margin:var(--s3) 0}
+.calc-in .btn{width:100%}
+.fieldset .hint{margin-top:8px}
 </style>
 </head>
 <body>
@@ -305,8 +329,9 @@ footer a:hover{color:var(--acc)}
       <h1 id="h1">Το Excel σας είναι ακόμα εργαλείο ή έγινε ρίσκο;</h1>
       <p class="sub">6 ερωτήσεις, 1 λεπτό.</p>
       <div class="cta-row">
-        <a class="btn" href="#form-area" data-cta>Κλείστε ραντεβού 20 λεπτών</a>
+        <a class="btn" href="#form-area" data-cta>Κλείστε συζήτηση 20 λεπτών</a>
         <div class="links2"><a href="tel:+3069XXXXXXXX">Τηλέφωνο</a><a href="viber://chat?number=%2B3069XXXXXXXX">Viber</a><a href="https://wa.me/3069XXXXXXXX">WhatsApp</a></div>
+        <p class="area">Έρχομαι σε όλη την Αττική</p>
       </div>
     </div>
 
@@ -316,22 +341,39 @@ footer a:hover{color:var(--acc)}
         <div class="card quiz" id="quiz">
           <div class="quiz-h"><h2 id="quiz-h">Απαντήστε ναι ή όχι</h2><span class="count" id="count" aria-live="polite">0 από 6</span></div>
           <div class="q" role="group" aria-labelledby="q1"><p class="q-t" id="q1"><span class="q-n">1</span><span>Μόνο ένας άνθρωπος ξέρει πώς δουλεύουν οι τύποι;</span></p><div class="yn"><button type="button" data-v="1" aria-pressed="false">Ναι</button><button type="button" data-v="0" aria-pressed="false">Όχι</button></div></div>
-          <div class="q" role="group" aria-labelledby="q2"><p class="q-t" id="q2"><span class="q-n">2</span><span>Υπάρχουν αρχεία με ονόματα όπως ΤΕΛΙΚΟ_2;</span></p><div class="yn"><button type="button" data-v="1" aria-pressed="false">Ναι</button><button type="button" data-v="0" aria-pressed="false">Όχι</button></div></div>
+          <div class="q" role="group" aria-labelledby="q2"><p class="q-t" id="q2"><span class="q-n">2</span><span>Υπάρχουν αρχεία με ονόματα όπως «ΤΕΛΙΚΟ_2»;</span></p><div class="yn"><button type="button" data-v="1" aria-pressed="false">Ναι</button><button type="button" data-v="0" aria-pressed="false">Όχι</button></div></div>
           <div class="q" role="group" aria-labelledby="q3"><p class="q-t" id="q3"><span class="q-n">3</span><span>Περνάτε τα ίδια στοιχεία με το χέρι σε δύο μέρη;</span></p><div class="yn"><button type="button" data-v="1" aria-pressed="false">Ναι</button><button type="button" data-v="0" aria-pressed="false">Όχι</button></div></div>
           <div class="q" role="group" aria-labelledby="q4"><p class="q-t" id="q4"><span class="q-n">4</span><span>Έχει χαθεί παραγγελία ή τιμολόγιο εξαιτίας του αρχείου;</span></p><div class="yn"><button type="button" data-v="1" aria-pressed="false">Ναι</button><button type="button" data-v="0" aria-pressed="false">Όχι</button></div></div>
           <div class="q" role="group" aria-labelledby="q5"><p class="q-t" id="q5"><span class="q-n">5</span><span>Δουλεύουν δύο άτομα στο ίδιο αρχείο και «χαλάει»;</span></p><div class="yn"><button type="button" data-v="1" aria-pressed="false">Ναι</button><button type="button" data-v="0" aria-pressed="false">Όχι</button></div></div>
-          <div class="q" role="group" aria-labelledby="q6"><p class="q-t" id="q6"><span class="q-n">6</span><span>Παίρνει πάνω από μισή ώρα να βγει η αναφορά του μήνα;</span></p><div class="yn"><button type="button" data-v="1" aria-pressed="false">Ναι</button><button type="button" data-v="0" aria-pressed="false">Όχι</button></div></div>
+          <div class="q" role="group" aria-labelledby="q6"><p class="q-t" id="q6"><span class="q-n">6</span><span>Θέλει πάνω από μισή ώρα για να βγει η αναφορά του μήνα;</span></p><div class="yn"><button type="button" data-v="1" aria-pressed="false">Ναι</button><button type="button" data-v="0" aria-pressed="false">Όχι</button></div></div>
           <div class="res" id="res" role="status" hidden>
             <span class="sc" id="sc"></span>
             <h3 id="res-t"></h3>
             <p id="res-p"></p>
-            <a class="btn" href="#form-area" data-cta>Κλείστε ραντεβού 20 λεπτών</a>
+            <a class="btn" href="#form-area" data-cta>Κλείστε συζήτηση 20 λεπτών</a>
           </div>
         </div>
+        <details class="calcd" id="calcd">
+          <summary>Θέλετε να το δείτε και σε ευρώ;</summary>
+          <div class="calc-in">
+            <div role="group" aria-label="Υπολογισμός χρόνου και κόστους">
+              <div class="crow"><label for="c-n">Άτομα που δουλεύουν στο Excel</label><input id="c-n" type="number" inputmode="numeric" min="0" step="1" value="3"></div>
+              <div class="crow"><label for="c-h">Ώρες την εβδομάδα ο καθένας</label><input id="c-h" type="number" inputmode="decimal" min="0" step="0.5" value="4"></div>
+              <div class="crow"><label for="c-c">Κόστος ώρας σε €<small>μισθός και εισφορές</small></label><input id="c-c" type="number" inputmode="decimal" min="0" step="0.5" value="12"></div>
+            </div>
+            <div class="cres" aria-live="polite" aria-atomic="true">
+              <div><b id="o-h">52</b><span>ώρες τον μήνα</span></div>
+              <div><b id="o-e">7.488 €</b><span>τον χρόνο</span></div>
+            </div>
+            <p class="how">Ώρες την εβδομάδα × 4,33 για τον μήνα, × 52 για τον χρόνο.</p>
+            <p class="honest" id="c-line">Περίπου 7.488 € τον χρόνο. Ας δούμε μαζί σε 20 λεπτά πόσα μπορείτε να γλιτώσετε.</p>
+            <a class="btn" href="#form-area" data-cta>Κλείστε συζήτηση 20 λεπτών</a>
+          </div>
+        </details>
       </div>
 
       <div class="shot">
-        <div class="shot-cap"><strong>Το ίδιο αρχείο. Άλλη εικόνα.</strong><span class="label">Σύρετε τη γραμμή</span></div>
+        <div class="shot-cap"><strong>Οι ίδιες παραγγελίες, σε δική σας εφαρμογή.</strong><span class="label">Σύρετε τη γραμμή</span></div>
         <div class="win">
           <div class="win-top" aria-hidden="true"><i></i><i></i><i></i></div>
           <div class="ba" id="ba">
@@ -442,10 +484,11 @@ footer a:hover{color:var(--acc)}
         <h2 id="form-h">20 λεπτά, χωρίς δέσμευση</h2>
         <p class="lead">Στο τηλέφωνο, σε βιντεοκλήση ή στο γραφείο σας στην Αττική. Όπως σας βολεύει.</p>
         <div class="card" id="formcard">
-          <form class="f" id="rf" action="#" method="POST" enctype="multipart/form-data" aria-label="Κλείστε ραντεβού 20 λεπτών">
+          <form class="f" id="rf" action="#" method="POST" enctype="multipart/form-data" aria-label="Κλείστε συζήτηση 20 λεπτών">
             <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY">
-            <input type="hidden" name="subject" value="Νέο αίτημα για συζήτηση 20 λεπτών (v6-4 τεστ)">
+            <input type="hidden" name="subject" value="Νέο αίτημα για συζήτηση 20 λεπτών (v7-2 τεστ)">
             <input type="hidden" name="quiz_score" id="quiz_score" value="">
+            <input type="hidden" name="estimate" id="estimate" value="">
             <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
 
             <div><label class="l" for="name">Όνομα <span class="req">*</span></label><input type="text" id="name" name="name" autocomplete="name" required></div>
@@ -458,6 +501,7 @@ footer a:hover{color:var(--acc)}
                 <label class="pill"><input class="sr" type="radio" name="method" value="Βιντεοκλήση"><span>Βιντεοκλήση</span></label>
                 <label class="pill"><input class="sr" type="radio" name="method" value="Επίσκεψη στο γραφείο σας"><span>Επίσκεψη στο γραφείο σας</span></label>
               </div>
+              <p class="hint">Αν προτιμάτε επίσκεψη, τον καφέ τον φέρνω εγώ.</p>
             </fieldset>
             <details class="more">
               <summary>Αν θέλετε, στείλτε το Excel από πριν</summary>
@@ -471,7 +515,7 @@ footer a:hover{color:var(--acc)}
               </div>
             </details>
             <label class="chk"><input type="checkbox" name="privacy" required><span>Αποδέχομαι την <a href="#">πολιτική απορρήτου</a></span></label>
-            <button class="btn" type="submit">Κλείστε ραντεβού 20 λεπτών</button>
+            <button class="btn" type="submit">Κλείστε συζήτηση 20 λεπτών</button>
             <p class="after-btn">Σας παίρνω εγώ τηλέφωνο μέσα σε μία εργάσιμη. Χωρίς δέσμευση.</p>
           </form>
           <p class="alt">Προτιμάτε να μιλήσουμε τώρα; <a href="tel:+3069XXXXXXXX">Τηλέφωνο</a> · <a href="viber://chat?number=%2B3069XXXXXXXX">Viber</a> · <a href="https://wa.me/3069XXXXXXXX">WhatsApp</a></p>
@@ -483,7 +527,7 @@ footer a:hover{color:var(--acc)}
           <div class="ph" role="img" aria-label="Εδώ μπαίνει η φωτογραφία μου (placeholder)"><svg viewBox="0 0 200 250" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><circle cx="100" cy="100" r="36" fill="#D6D6D1"/><path d="M28 250c0-54 32-86 72-86s72 32 72 86z" fill="#D6D6D1"/></svg></div>
           <div>
             <h2 id="who-h">[Όνομα], προγραμματιστής</h2>
-            <p class="who">Φτιάχνω εσωτερικές εφαρμογές για μικρές επιχειρήσεις. Θα μιλήσετε με εμένα, όχι με πωλητή. Τα μηνύματά σας τα διαβάζω εγώ.</p>
+            <p class="who">Φτιάχνω εσωτερικές εφαρμογές για μικρές επιχειρήσεις. Θα μιλήσετε απευθείας με εμένα.</p>
             <ul class="checks">
               <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="#107C41" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8.5l3.25 3.25L13 4.5"/></svg>Τα αρχεία σας δεν μπαίνουν σε κανένα AI</li>
               <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="#107C41" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8.5l3.25 3.25L13 4.5"/></svg>Σβήνονται σε 30 μέρες ή αμέσως, αν το ζητήσετε</li>
@@ -628,8 +672,8 @@ footer a:hover{color:var(--acc)}
   var scoreField = document.getElementById('quiz_score');
   var answers = [];
   var R = [
-    ['Εργαλείο. Κρατήστε το.', 'Το αρχείο σας κάνει τη δουλειά του. Δεν χρειάζεστε εφαρμογή. Αν θέλετε δεύτερη γνώμη, 20 λεπτά φτάνουν.'],
-    ['Θέλει προσοχή.', 'Το Excel αντέχει ακόμα, αλλά στηρίζεται ήδη σε έναν άνθρωπο ή σε συνήθειες. Καλύτερα να το δούμε πριν χαθεί κάποια παραγγελία.'],
+    ['Εργαλείο. Κρατήστε το.', 'Το αρχείο σας κάνει τη δουλειά του και δεν χρειάζεστε εφαρμογή.'],
+    ['Θέλει προσοχή.', 'Το Excel αντέχει ακόμα, αλλά στηρίζεται ήδη σε έναν άνθρωπο ή σε συνήθειες.'],
     ['Έγινε ρίσκο.', 'Ένας λάθος τύπος ή ένα χαμένο αρχείο μπορεί να κοστίσει μια παραγγελία ή ένα τιμολόγιο. Δεν χρειάζεται να τα αλλάξετε όλα. Θα δούμε μαζί τι πρέπει να αλλάξει πρώτο.']
   ];
   function update(){
@@ -638,9 +682,9 @@ footer a:hover{color:var(--acc)}
     countEl.textContent = n + ' από ' + qs.length;
     if (n < qs.length) { resEl.hidden = true; scoreField.value = ''; return; }
     var k = yes <= 1 ? 0 : (yes <= 3 ? 1 : 2);
-    resT.textContent = R[k][0];
+    scEl.textContent = R[k][0];
+    resT.textContent = 'Απαντήσατε «ναι» σε ' + yes + ' από τις ' + qs.length + '. ' + (k === 0 ? 'Αν θέλετε δεύτερη γνώμη, 20 λεπτά φτάνουν.' : 'Ας το δούμε μαζί σε 20 λεπτά.');
     resP.textContent = R[k][1];
-    scEl.textContent = 'Ναι σε ' + yes + ' από ' + qs.length;
     scoreField.value = yes + '/' + qs.length + ' · ' + R[k][0];
     resEl.hidden = false;
   }
@@ -654,6 +698,23 @@ footer a:hover{color:var(--acc)}
       });
     });
   });
+
+  /* ---------- Calculator (secondary, collapsed) ---------- */
+  var cn = document.getElementById('c-n'), ch = document.getElementById('c-h'), cc = document.getElementById('c-c');
+  var oh = document.getElementById('o-h'), oe = document.getElementById('o-e'), est = document.getElementById('estimate'), cline = document.getElementById('c-line');
+  function num(el){ var v = parseFloat(String(el.value).replace(',', '.')); return (isFinite(v) && v > 0) ? v : 0; }
+  function gr(n){ return String(Math.round(n)).replace(/\B(?=(\d{3})+(?!\d))/g, '.'); }
+  function calc(touched){
+    var n = num(cn), h = num(ch), c = num(cc);
+    var hours = Math.round(n * h * 4.33);
+    var euro = Math.round(n * h * 52 * c);
+    oh.textContent = gr(hours);
+    oe.textContent = gr(euro) + ' €';
+    cline.textContent = euro > 0 ? 'Περίπου ' + gr(euro) + ' € τον χρόνο. Ας δούμε μαζί σε 20 λεπτά πόσα μπορείτε να γλιτώσετε.' : 'Συμπληρώστε τους αριθμούς και θα δείτε μια εκτίμηση.';
+    if (touched) est.value = gr(hours) + ' ώρες τον μήνα, ' + gr(euro) + ' € τον χρόνο (' + n + ' άτομα, ' + h + ' ώρες την εβδομάδα, ' + c + ' € την ώρα)';
+  }
+  [cn, ch, cc].forEach(function(el){ el.addEventListener('input', function(){ calc(true); }); });
+  calc(false);
 
   /* ---------- CTA: scroll to form and focus the name field ---------- */
   var nameEl = document.getElementById('name');
@@ -677,7 +738,7 @@ footer a:hover{color:var(--acc)}
   function show(){
     var f = file.files && file.files[0];
     if (!f) { fname.textContent = ''; file.setCustomValidity(''); return; }
-    if (f.size > MAX) { file.setCustomValidity('Το αρχείο ξεπερνά τα 25 MB.'); fname.textContent = 'Πάνω από 25 MB. Δοκιμάστε μικρότερο αντίγραφο.'; return; }
+    if (f.size > MAX) { file.setCustomValidity('Το αρχείο ξεπερνά τα 25 MB.'); fname.textContent = 'Πάνω από 25 MB. Δοκιμάστε μικρότερο αρχείο.'; return; }
     file.setCustomValidity('');
     fname.textContent = f.name;
   }
